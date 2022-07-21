@@ -8,8 +8,6 @@ export default function Filters() {
             label: item,
             categories: itemList[item]
         }
-        return <div>
-            <SingleFilter key={i} {...product}></SingleFilter>
-        </div>
+        return <SingleFilter key={i} {...product}></SingleFilter>
     })
 }
