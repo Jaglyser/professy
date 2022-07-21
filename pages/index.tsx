@@ -4,19 +4,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Anton from '../lib/Components/index/App'
 
 const Home: NextPage = () => {
   return (
-    <div style={{paddingTop: "20px"}}>
-      <Container>
-        <Stack direction="row" spacing={1}>
-          <Button variant="contained">Filter 1</Button>
-          <Button variant="contained">Filter 2</Button>
-          <Button variant="contained">Filter 3</Button>
-          <Button variant="contained">Filter 4</Button>
-        </Stack>
-      </Container>
-    </div>
+    <Anton></Anton>
   )
 }
 

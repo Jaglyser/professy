@@ -1,0 +1,23 @@
+import ProductData from "./ProductData";
+
+const ProductsFromData = () => {
+  
+    const results = [];
+  
+    ProductData.forEach(uniqueitem => {
+      results.push(
+        <div key={uniqueitem.ItemNumber}>
+          <h2>name: {uniqueitem.Brand}</h2>
+          <h2>country: {uniqueitem.Category}</h2>
+          
+          <hr />
+        </div>,
+      );
+    });
+  
+    return (
+      <div>
+        {results}
+      </div>
+    );
+  };
