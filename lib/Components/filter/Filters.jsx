@@ -1,13 +1,15 @@
-import SingleFilter from "../filter/SingleFilter";
+import ProductCategories from "../Products/ProductCategories"
+import SingleFilter from "./SingleFilter"
 
-
-
-export default function Filters(jsonData) {
-    function getUniquePropertyValues(_array, _property) { // Set will store only distinct values
-        return [...new Set(_array.map(element => element[_property]))];
-    }
-
-
-
-    return <div></div>
+export default function Filters() {
+    const itemList = ProductCategories
+    return Object.keys(itemList).map((item, i) => {
+        const product = {
+            label: item,
+            categories: itemList[item]
+        }
+        return <div>
+            <SingleFilter key={i} {...product}></SingleFilter>
+        </div>
+    })
 }

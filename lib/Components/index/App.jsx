@@ -13,10 +13,9 @@ export default function App(jsonData, props) {
     <div className="App">
 
       <SplitPane className="split-pane-row">
-        <SplitPaneLeft {...jsonData}>
+        <SplitPaneLeft >
           <SplitPane className="split-pane-col">
             <SplitPaneTop />
-            <div>test</div>
             <Divider className="separator-row" />
             <SplitPaneBottom />
           </SplitPane>

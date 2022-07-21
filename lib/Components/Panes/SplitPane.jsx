@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import Filters from "../filter/Filters";
 import SplitPaneContext from "../Panes/SplitPaneContext";
 import ProductList from "../Products/ProductList";
 
@@ -86,6 +87,7 @@ export const SplitPaneTop = (props) => {
   return (
     <div {...props} className="split-pane-top" ref={topRef}>
       <h1>Categories</h1>
+      <Filters></Filters>
     </div>
   );
 };
@@ -100,7 +102,6 @@ export const SplitPaneBottom = (props) => {
 };
 
 export const SplitPaneLeft = (props) => {
-  console.log(props)
   let children = { children: props.children }
   const topRef = createRef();
   const { clientWidth, setClientWidth } = useContext(SplitPaneContext);

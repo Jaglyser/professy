@@ -6,8 +6,6 @@ import ProductData from './ProductData';
 
 export default function ProductList(jsonData) {
 
-  console.log(typeof (jsonData))
-
   return (
     <div className="container product-list main-content">
       {Object.values(jsonData).map((row, i) => {
