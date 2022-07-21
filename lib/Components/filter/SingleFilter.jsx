@@ -7,6 +7,7 @@ export default function SingleFilter(product) {
             <div style={{ fontWeight: "bold" }}>{product.label}</div>
             {product.categories.map((prod, i) => (
                 <FormControlLabel
+                    key={i}
                     control={
                         <Checkbox
                             name="SomeName"
