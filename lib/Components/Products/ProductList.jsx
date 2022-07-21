@@ -11,7 +11,7 @@ export default function ProductList(jsonData) {
   return (
     <div className="container product-list main-content">
       {Object.values(jsonData).map((row, i) => {
-        return (<ProductRow items={row} />)
+        return (<ProductRow key={i} items={row} />)
         // return (<div>test</div>)
       })}
 
