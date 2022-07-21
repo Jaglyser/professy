@@ -100,6 +100,8 @@ export const SplitPaneBottom = (props) => {
 };
 
 export const SplitPaneLeft = (props) => {
+  console.log(props)
+  let children = { children: props.children }
   const topRef = createRef();
   const { clientWidth, setClientWidth } = useContext(SplitPaneContext);
 
@@ -113,7 +115,7 @@ export const SplitPaneLeft = (props) => {
     topRef.current.style.maxWidth = clientWidth + "px";
   }, [clientWidth]);
 
-  return <div {...props} className="split-pane-left" ref={topRef} />;
+  return <div {...children} className="split-pane-left" ref={topRef} />;
 };
 
 export const SplitPaneRight = (jsonData) => {

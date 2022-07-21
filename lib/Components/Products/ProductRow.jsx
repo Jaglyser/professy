@@ -2,8 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 
 const ProductRow = (props) => {
-  console.log(props)
-
 
   return (
     <div className="row product">

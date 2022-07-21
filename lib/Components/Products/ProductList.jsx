@@ -14,24 +14,6 @@ export default function ProductList(jsonData) {
         return (<ProductRow key={i} items={row} />)
         // return (<div>test</div>)
       })}
-
-      {/* for each loop */}
-      {/* <ProductRow items={ProductData[1]} /> */}
-      {/* <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow />
-        <ProductRow /> */}
     </div>
   );
 }
