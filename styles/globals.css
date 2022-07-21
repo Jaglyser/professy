@@ -15,5 +15,22 @@ a {
   box-sizing: border-box;
 }
 
+.split-plane-right-container {
+  height: 100vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @import "../styles/index.css";
 @import "../styles/App.css";

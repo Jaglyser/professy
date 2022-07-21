@@ -2,6 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 
 const ProductRow = (props) => {
+  console.log(props)
+
 
   return (
     <div className="row product">
@@ -9,10 +11,10 @@ const ProductRow = (props) => {
         <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
       </div>
       <div className="col-md-8 product-detail">
-        <h4>test</h4>
+        <h4>{props.items.Size}</h4>
       </div>
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>{props.items.Shortdescription}</p>
       </div>
       <div className="col-md-2 product-price">
         $19.99

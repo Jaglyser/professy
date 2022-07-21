@@ -7,7 +7,7 @@ import SplitPane, {
 } from "../Panes/SplitPane";
 
 
-export default function App() {
+export default function App(jsonData) {
 
   return (
     <div className="App">
@@ -22,7 +22,7 @@ export default function App() {
         </SplitPaneLeft>
         <Divider className="separator-col" />
 
-        <SplitPaneRight />
+        <SplitPaneRight {...jsonData} />
       </SplitPane>
 
     </div>

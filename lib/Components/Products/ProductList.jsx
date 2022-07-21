@@ -4,18 +4,20 @@ import ProductData from './ProductData';
 
 
 
-class ProductList extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
+export default function ProductList(jsonData) {
 
-  render() {
-    return (
-      <div className="container main-content">
-        {/* for each loop */}
-        <ProductRow items={ProductData[1]}/>
-        {/* <ProductRow />
+  console.log(typeof (jsonData))
+
+  return (
+    <div className="container product-list main-content">
+      {Object.values(jsonData).map((row, i) => {
+        return (<ProductRow items={row} />)
+        // return (<div>test</div>)
+      })}
+
+      {/* for each loop */}
+      {/* <ProductRow items={ProductData[1]} /> */}
+      {/* <ProductRow />
         <ProductRow />
         <ProductRow />
         <ProductRow />
@@ -30,10 +32,8 @@ class ProductList extends Component {
         <ProductRow />
         <ProductRow />
         <ProductRow /> */}
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
-export default ProductList;
 

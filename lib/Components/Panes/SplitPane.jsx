@@ -116,14 +116,14 @@ export const SplitPaneLeft = (props) => {
   return <div {...props} className="split-pane-left" ref={topRef} />;
 };
 
-export const SplitPaneRight = (props) => {
+export const SplitPaneRight = (jsonData) => {
 
   return (
-    <div className="container">
+    <div className="container split-plane-right-container">
       <header className="header">
         <h1>text</h1>
       </header>
-      <ProductList />
+      <ProductList {...jsonData} />
     </div>
     // <div {...props} className="split-pane-right">
     //   <div className="quote">

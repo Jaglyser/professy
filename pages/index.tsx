@@ -4,11 +4,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Anton from '../lib/Components/index/App'
+import App from '../lib/Components/index/App'
+import ProductData from '../lib/Components/Products/ProductData'
 
 const Home: NextPage = () => {
+  const jsonData = ProductData
   return (
-    <Anton></Anton>
+    <App {...jsonData}></App>
   )
 }
 
