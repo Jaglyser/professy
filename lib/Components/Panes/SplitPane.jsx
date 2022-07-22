@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, {
   createRef,
   useContext,
@@ -86,7 +87,7 @@ export const SplitPaneTop = (props) => {
 
   return (
     <div {...props} className="split-pane-top" ref={topRef}>
-      <h1>Categories</h1>
+      <h1>Filter</h1>
       <Filters></Filters>
     </div>
   );
@@ -96,7 +97,7 @@ export const SplitPaneBottom = (props) => {
 
   return (
     <div className="split-pane-bottom">
-      <b>Varukorgen</b>
+      <b>Projection</b>
     </div>
   );
 };
@@ -123,9 +124,6 @@ export const SplitPaneRight = (jsonData) => {
 
   return (
     <div className="container split-plane-right-container">
-      <header className="header">
-        <h1>text</h1>
-      </header>
       <ProductList {...jsonData} />
     </div>
     // <div {...props} className="split-pane-right">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SplitPane, {
   Divider,
   SplitPaneBottom,
@@ -10,21 +11,27 @@ import SplitPane, {
 export default function App(jsonData, props) {
 
   return (
-    <div className="App">
+    <>
+      <header className="header">
+        <Image height={100} width={300} src="/Images/proffesy.png" />
+      </header>
+      <div className="App">
 
-      <SplitPane className="split-pane-row">
-        <SplitPaneLeft >
-          <SplitPane className="split-pane-col">
-            <SplitPaneTop />
-            <Divider className="separator-row" />
-            <SplitPaneBottom />
-          </SplitPane>
-        </SplitPaneLeft>
-        <Divider className="separator-col" />
 
-        <SplitPaneRight {...jsonData} />
-      </SplitPane>
+        <SplitPane className="split-pane-row">
+          <SplitPaneLeft >
+            <SplitPane className="split-pane-col">
+              <SplitPaneTop />
+              <Divider className="separator-row" />
+              <SplitPaneBottom />
+            </SplitPane>
+          </SplitPaneLeft>
+          <Divider className="separator-col" />
 
-    </div>
+          <SplitPaneRight {...jsonData} />
+        </SplitPane>
+
+      </div>
+    </>
   );
 }
