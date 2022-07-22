@@ -16,8 +16,6 @@ export default function App(jsonData, props) {
         <Image height={100} width={300} src="/Images/proffesy.png" />
       </header>
       <div className="App">
-
-
         <SplitPane className="split-pane-row">
           <SplitPaneLeft >
             <SplitPane className="split-pane-col">
@@ -30,7 +28,6 @@ export default function App(jsonData, props) {
 
           <SplitPaneRight {...jsonData} />
         </SplitPane>
-
       </div>
     </>
   );
