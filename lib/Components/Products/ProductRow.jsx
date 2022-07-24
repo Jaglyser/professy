@@ -49,25 +49,25 @@ const ProductRow = (props) => {
           </div>
           <div className="color-detail">
             <h4>Colors</h4>
-              {props.values.map((value, i) => {
-                if (!colors.has(value.Color)) {
-                  colors.add(value.Color)
-                  return (<div>{value.Color}</div>)
-                }
-        })}
+            {props.values.map((value, i) => {
+              if (!colors.has(value.Color)) {
+                colors.add(value.Color)
+                return (<div>{value.Color}</div>)
+              }
+            })}
           </div>
           <div className="col-md-8 product-detail">
             <h4>Sizes</h4>
-              {props.values.map((value, i) => {
-                if (!sizes.has(value.Size)) {
-                  sizes.add(value.Size)
-                    return (<div>{value.Size}</div>)
-          }
-        })}
-      </div>
-      <div className="col-md-2 product-price">
-        $19.99
-      </div>
+            {props.values.map((value, i) => {
+              if (!sizes.has(value.Size)) {
+                sizes.add(value.Size)
+                return (<div>{value.Size}</div>)
+              }
+            })}
+          </div>
+          <div className="col-md-2 product-price">
+            $19.99
+          </div>
         </div>
 
       )}
@@ -81,5 +81,4 @@ const ProductRow = (props) => {
   );
 }
 
-export default ProductRow;
 export default ProductRow;
