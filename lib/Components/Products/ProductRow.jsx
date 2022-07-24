@@ -71,12 +71,6 @@ const ProductRow = (props) => {
         </div>
 
       )}
-
-
-
-
-
-
     </div>
   );
 }
