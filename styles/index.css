@@ -136,6 +136,8 @@ header {
 }
 
 .product-detail {
+  font-weight: bold;
+  font-size: 100%;
   padding: 0 2rem;
   display: flex;
   gap: 10px;
@@ -145,12 +147,12 @@ header {
 .product-detail h4 {
   text-align: start;
   width: 100%;
-  font-size: 12px;
+  font-size: 100%;
 }
 
 .product-price {
   font-weight: bold;
-  font-size: 120%;
+  font-size: 100%;
 }
 
 .color-detail {
@@ -164,4 +166,62 @@ header {
 .color-detail h4 {
   width: 410px;
   text-align: start;
+}
+
+/* expanded view */
+
+.itemsExpandedView {
+  overflow-y: scroll;
+  max-height: 500px;
+  width: auto;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem 0;
+  margin: 2rem 0;
+  align-items: center;
+
+
+  /* display: flex;
+  flex-wrap: wrap;
+  padding: 10px 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+.itemsExpandedView-details {
+  font-weight: bold;
+  font-size: 100%;
+  padding: 0 2rem;
+  display: grid;
+  gap: 10px;
+  flex-wrap: wrap;
+  grid-template-columns: 100px 50px 50px 50px 50px 50px;
+
+}
+
+.productExpanded {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.productExpanded-detail {
+  font-weight: bold;
+  font-size: 100%;
+  padding: 0 2rem;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+
+
+.input {
+  width: 25px;
+  height: 25px;
 }

@@ -5,15 +5,15 @@ import ProductData from './ProductData';
 
 
 export default function ProductList(jsonData) {
-  let uniqueObjArray = [...new Map(Object.values(jsonData).map((item) => [item["Shortdescription"], item])).values()]
-  let uniqueValues = uniqueObjArray.map((item) => Object.values(jsonData).filter((values) => values['Shortdescription'] == item['Shortdescription']))
+  let uniqueModelArray = [...new Map(Object.values(jsonData).map((item) => [item["Modelname"], item])).values()]
+  let uniqueValues = uniqueModelArray.map((item) => Object.values(jsonData).filter((values) => values['Modelname'] == item['Modelname']))
 
   return (
     <div className="container product-list main-content">
       {/* {Object.values(jsonData).map((row, i) => {
         return (<ProductRow key={i} items={row} />)
       })} */}
-      {uniqueObjArray.map((item, i) => (
+      {uniqueModelArray.map((item, i) => (
         <ProductRow key={i} items={item} values={uniqueValues[i]} />
       ))}
     </div>

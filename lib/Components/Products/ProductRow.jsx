@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
+
 const ProductRow = (props) => {
   const [fullProductView, setFullProductView] = useState(false);
 
@@ -21,53 +22,63 @@ const ProductRow = (props) => {
     setFullProductView(false);
   };
 
-
-  let sizes = new Set();
-  let colors = new Set();
+  let itemNumbers = new Set();
+  let Colors = new Set();
 
   return (
 
-    <div className="row product" onClick={startEditingHandler}>
+    <div onClick={startEditingHandler}>
       {!fullProductView && (
-        <div className="smallProductRow">
+        <div className="row product">
           <div className="col-md-2">
             <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
           </div>
-          <div className="col-md-2">{props.items.Shortdescription}</div>
-          <div className="col-md-2">{props.items.Netprice}</div>
-          <div className="col-md-2">{props.items.Recommendedretailprice}</div>
+          <div className="col-md-8 product-detail">
+            {props.items.Shortdescription}
+          </div>
+          <div className="col-md-8 product-price">
+            <p>{props.items.Netprice}</p>
+            <p>{props.items.Recommendedretailprice}</p>
+          </div>
         </div>
 
       )}
       {fullProductView && (
-        <div>
+        <div className="row productExpanded">
           <div className="col-md-2">
-            <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
+            <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="150" height="150" />
           </div>
-          <div>
+          <div classname="productExpanded-detail">
             <p>{props.items.Shortdescription}</p>
           </div>
-          <div className="color-detail">
-            <h4>Colors</h4>
+          <div className="row itemsExpandedView">
             {props.values.map((value, i) => {
-              if (!colors.has(value.Color)) {
-                colors.add(value.Color)
-                return (<div>{value.Color}</div>)
+              if (!itemNumbers.has(value.ItemNumber)) {
+                itemNumbers.add(value.ItemNumber)
+                return (<div>
+                  <div className="itemsExpandedView-details">
+                      <div>
+                        {value.ItemNumber}
+                      </div>
+                      <div>
+                        {value.Size}
+                      </div>
+
+                      <div>
+                        {props.items.Netprice}
+                      </div>
+                      <div>
+                        {props.items.Recommendedretailprice} 
+                      </div>
+                      <div>
+                        <input className='input'></input>
+                      </div>
+                    </div>
+                  </div>)
               }
             })}
           </div>
-          <div className="col-md-8 product-detail">
-            <h4>Sizes</h4>
-            {props.values.map((value, i) => {
-              if (!sizes.has(value.Size)) {
-                sizes.add(value.Size)
-                return (<div>{value.Size}</div>)
-              }
-            })}
-          </div>
-          <div className="col-md-2 product-price">
-            $19.99
-          </div>
+
         </div>
 
       )}
