@@ -124,6 +124,7 @@ export const SplitPaneRight = (jsonData) => {
 
   return (
     <div className="container split-plane-right-container">
+      
       <ProductList {...jsonData} />
     </div>
     // <div {...props} className="split-pane-right">
