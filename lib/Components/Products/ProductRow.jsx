@@ -48,7 +48,7 @@ const ProductRow = (props) => {
           <div className="col-md-2">
             <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="150" height="150" />
           </div>
-          <div classname="productExpanded-detail">
+          <div className="productExpanded-detail">
             <p>{props.items.Shortdescription}</p>
           </div>
           <div className="row itemsExpandedView">
