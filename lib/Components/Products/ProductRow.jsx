@@ -14,12 +14,7 @@ const ProductRow = (props) => {
     else { setFullProductView(false); }
 
   };
-
-  const stopEditingHandler = () => {
-    setFullProductView(false);
-  };
-
-
+  
   return (
 
     <div onClick={startEditingHandler}>
