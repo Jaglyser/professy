@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React, { useState } from 'react';
 import { ProductExpandedview } from './ProductExpandedView';
 import { ProductRegularView } from './ProductRegularView';
@@ -10,13 +9,9 @@ const ProductRow = (props) => {
 
   const startEditingHandler = () => {
 
-    if (!fullProductView) {
-      setFullProductView(true);
-    }
+    if (!fullProductView) { setFullProductView(true); }
 
-    else {
-      setFullProductView(false);
-    }
+    else { setFullProductView(false); }
 
   };
 
@@ -29,11 +24,7 @@ const ProductRow = (props) => {
 
     <div onClick={startEditingHandler}>
       {!fullProductView && (
-        <ProductRegularView
-          netPrice = {props.items.Netprice}
-          recommendedRetailPrice = {props.items.Recommendedretailprice}
-          shortDescription = {props.items.Shortdescription}
-        />
+        <ProductRegularView {...props}/>
       )}
       {fullProductView && (
         <ProductExpandedview {...props}/>

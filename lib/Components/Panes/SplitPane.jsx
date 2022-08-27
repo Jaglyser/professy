@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, {
   createRef,
   useContext,
@@ -123,15 +122,8 @@ export const SplitPaneRight = (jsonData) => {
 
   return (
     <div className="container split-plane-right-container">
-      
       <ProductList {...jsonData} />
     </div>
-    // <div {...props} className="split-pane-right">
-    //   <div className="quote">
-    //     <blockquote>{quote.description}</blockquote>—{" "}
-    //     <span>{quote.author}</span>
-    //   </div>
-    // </div>
   );
 };
 
