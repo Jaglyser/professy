@@ -1,14 +1,16 @@
+import classes from './ProductExpandedViewItems.module.css';
+
 export const ProductExpandedViewItems = (props) => {
 
     let itemNumbers = new Set();
 
     return ( 
-        <div className="productExpanded-items">
+        <div className={classes['productExpanded-items']}>
         {props.values.map((value, i) => {
           if (!itemNumbers.has(value.ItemNumber)) {
             itemNumbers.add(value.ItemNumber)
             return (<div>
-              <div className="productExpanded-items-details">
+              <div className={classes['productExpanded-details']}>
                   <div>
                     {value.ItemNumber}
                   </div>
@@ -27,7 +29,7 @@ export const ProductExpandedViewItems = (props) => {
                   </div>
                   
                   <div>
-                    <input className='input'></input>
+                    <input className={classes.input}></input>
                   </div>
                   
                 </div>
