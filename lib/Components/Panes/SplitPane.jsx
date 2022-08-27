@@ -87,7 +87,7 @@ export const SplitPaneTop = (props) => {
 
   return (
     <div {...props} className={classes["split-pane-top"]} ref={topRef}>
-      <Filters></Filters>
+      <Filters />
     </div>
   );
 };
@@ -96,7 +96,8 @@ export const SplitPaneBottom = (props) => {
 
   return (
     <div className={classes["split-pane-bottom"]}>
-      <b>Projection</b>
+      
+      
     </div>
   );
 };

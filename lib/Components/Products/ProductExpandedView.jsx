@@ -10,7 +10,7 @@ export const ProductExpandedview = (props) => {
             <div>
               <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="170" height="170" />
             </div>
-            <div className="productExpanded-images-small">
+            <div className={classes["productExpanded-images-small"]}>
               <div>
                 <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
               </div>

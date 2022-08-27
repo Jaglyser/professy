@@ -7,25 +7,25 @@ import SplitPane, {
   SplitPaneRight,
   SplitPaneTop,
 } from "../Panes/SplitPane";
-
+import classes from './App.module.css';
 
 export default function App(jsonData, props) {
 
   return (
     <>
-      <header className="header">
+      <header className={classes.header}>
         <Image height={100} width={300} src="/Images/proffesy.png" />
       </header>
-      <div className="App">
-        <SplitPane className="split-pane-row">
+      <div className={classes.App}>
+        <SplitPane className={classes["split-pane-row"]}>
           <SplitPaneLeft >
-            <SplitPane className="split-pane-col">
+            <SplitPane className={classes["split-pane-col"]}>
               <SplitPaneTop />
-              <Divider className="separator-row" />
+              <Divider className={classes["separator-row"]} />
               <SplitPaneBottom />
             </SplitPane>
           </SplitPaneLeft>
-          <Divider className="separator-col" />
+          <Divider className={classes["separator-col"]} />
 
           <SplitPaneRight {...jsonData} />
         </SplitPane>

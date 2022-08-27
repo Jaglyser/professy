@@ -34,3 +34,8 @@
     font-size: 70%;
     text-align: left;
   }
+
+  .productExpanded-images-small {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
