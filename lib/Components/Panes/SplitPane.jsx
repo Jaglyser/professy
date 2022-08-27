@@ -8,6 +8,7 @@ import React, {
 import Filters from "../filter/Filters";
 import SplitPaneContext from "../Panes/SplitPaneContext";
 import ProductList from "../Products/ProductList";
+import classes from './SplitPane.module.css';
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);
@@ -85,7 +86,7 @@ export const SplitPaneTop = (props) => {
   }, [clientHeight]);
 
   return (
-    <div {...props} className="split-pane-top" ref={topRef}>
+    <div {...props} className={classes["split-pane-top"]} ref={topRef}>
       <Filters></Filters>
     </div>
   );
@@ -94,7 +95,7 @@ export const SplitPaneTop = (props) => {
 export const SplitPaneBottom = (props) => {
 
   return (
-    <div className="split-pane-bottom">
+    <div className={classes["split-pane-bottom"]}>
       <b>Projection</b>
     </div>
   );
@@ -115,13 +116,13 @@ export const SplitPaneLeft = (props) => {
     topRef.current.style.maxWidth = clientWidth + "px";
   }, [clientWidth]);
 
-  return <div {...children} className="split-pane-left" ref={topRef} />;
+  return <div {...children} className={classes['split-pane-left']} ref={topRef} />;
 };
 
 export const SplitPaneRight = (jsonData) => {
 
   return (
-    <div className="container split-plane-right-container">
+    <div className={classes["split-plane-right-container"]}>
       <ProductList {...jsonData} />
     </div>
   );

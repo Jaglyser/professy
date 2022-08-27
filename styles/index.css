@@ -65,29 +65,6 @@ body {
   cursor: row-resize;
 }
 
-ul {
-  margin-left: -2%;
-}
-
-ul li {
-  margin: 1rem;
-  list-style-type: square;
-}
-
-ul a {
-  text-decoration: none;
-  color: darkblue;
-  font-size: large;
-}
-
-ul a:hover {
-  color: black;
-}
-
-.quote span {
-  font-weight: bold;
-}
-
 header {
   padding: 1rem 0;
   font-weight: bold;

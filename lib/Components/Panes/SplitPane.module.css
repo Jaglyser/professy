@@ -1,0 +1,19 @@
+.split-pane-top,
+.split-pane-bottom,
+.split-pane-right {
+  flex: 1;
+  overflow: hidden;
+}
+
+.split-pane-left {
+    min-width: 50%;
+    flex: 2 2 60%;
+    overflow: hidden;
+  }
+
+  .split-plane-right-container {
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    width: 100%;
+    padding: 0 2rem;
+  }
