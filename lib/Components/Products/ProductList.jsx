@@ -10,11 +10,13 @@ export default function ProductList(jsonData) {
 
   return (
     <div className="container product-list main-content">
-      {/* {Object.values(jsonData).map((row, i) => {
-        return (<ProductRow key={i} items={row} />)
-      })} */}
+      
       {uniqueModelArray.map((item, i) => (
-        <ProductRow key={i} items={item} values={uniqueValues[i]} />
+        <ProductRow 
+          key={i}
+          items={item}
+          values={uniqueValues[i]}
+        />
       ))}
     </div>
   )
