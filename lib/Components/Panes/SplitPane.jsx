@@ -5,7 +5,8 @@ import React, {
   useRef,
   useState,
 } from "react";
-import Filters from "../filter/Filters";
+import Filters from "../Filter/Filters";
+import TestFilter from "../Filter/TestFilter";
 import SplitPaneContext from "../Panes/SplitPaneContext";
 import ProductList from "../Products/ProductList";
 import classes from './SplitPane.module.css';
@@ -92,12 +93,11 @@ export const SplitPaneTop = (props) => {
   );
 };
 
-export const SplitPaneBottom = (props) => {
+export const SplitPaneBottom = (...jsonData) => {
 
   return (
     <div className={classes["split-pane-bottom"]}>
-      
-      
+          <TestFilter {...jsonData} />
     </div>
   );
 };
