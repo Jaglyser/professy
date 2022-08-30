@@ -2,6 +2,8 @@ import { ClassNames } from '@emotion/react';
 import ProductData from '../Products/ProductData';
 import { TestFilter2 } from './TestFilter2';
 import classes from './TestFilter.module.css';
+import MultipleSelect from './DropDownList';
+import MultipleSelectChip from './DropDownList2';
 
 
 export default function TestFilter() {
@@ -13,12 +15,18 @@ export default function TestFilter() {
     return Object.assign(result, obj);
   }, {}))
 
-  let uniqueKeyArray = [...new Map(Object.values(dataFilters).map((item) => [item[uniqueKeys[1]], item])).values()]
-  
+  const filterCategories = [
+      'Brand',
+      'Category',
+      'Sub-category',
+      'Modelname',
+
+    ];
+
     return (
       <div className={classes.test}>
-        {uniqueKeys.map((item, i) => (
-          <TestFilter2 
+        {filterCategories.map((item, i) => (
+          <MultipleSelectChip 
             key={i}
             items={item}
           />

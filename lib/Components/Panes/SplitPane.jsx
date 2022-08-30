@@ -72,7 +72,7 @@ export const Divider = (props) => {
   return <div {...props} onMouseDown={onMouseHoldDown} />;
 };
 
-export const SplitPaneTop = (props) => {
+export const SplitPaneTop = (...jsonData) => {
   const topRef = createRef();
   const { clientHeight, setClientHeight } = useContext(SplitPaneContext);
 
@@ -87,17 +87,17 @@ export const SplitPaneTop = (props) => {
   }, [clientHeight]);
 
   return (
-    <div {...props} className={classes["split-pane-top"]} ref={topRef}>
-      <Filters />
+    <div className={classes["split-pane-top"]} ref={topRef}>
+      <TestFilter {...jsonData} />
     </div>
   );
 };
 
-export const SplitPaneBottom = (...jsonData) => {
+export const SplitPaneBottom = () => {
 
   return (
     <div className={classes["split-pane-bottom"]}>
-          <TestFilter {...jsonData} />
+          Placeholder
     </div>
   );
 };

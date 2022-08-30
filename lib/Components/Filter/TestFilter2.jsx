@@ -17,8 +17,7 @@ export const TestFilter2 = (props) => {
               {uniqueKeyArray.map((item, i) => (
                 <TestFilter3
                   key={i}
-                  items={item}
-                  currentCategory={currentCategory}
+                  items={item[currentCategory]}
                 />
               ))}
             </div>
