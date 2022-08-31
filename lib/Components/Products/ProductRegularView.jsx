@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import classes from './ProductRegularView.module.css'
+import {Prevent} from '../Functions/Prevent'
 
 export const ProductRegularView = (props) => {
     return (
@@ -8,11 +9,11 @@ export const ProductRegularView = (props) => {
             <div className={classes['product-detail']}>
               <div className={classes['product-description']}> {props.items.Shortdescription} </div>
             
-              <div className={classes['product-priceAndInput']}>
+              <div className={classes['product-priceAndInput']} onClick={Prevent(()=>console.log("Child Element!"))}>
                 <div className={classes['product-price']}>
                   <div>{props.items.Netprice}</div>
                 </div>
-                <div className={classes['product-price']}>
+                <div className={classes['product-price']} >
                   <div>{props.items.Recommendedretailprice}</div>
                 </div>
                 <div>

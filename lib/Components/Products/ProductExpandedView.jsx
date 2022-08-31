@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ProductExpandedViewItems } from './ProductExpandedViewItems';
 import classes from './ProductExpandedView.module.css'
+import {Prevent} from '../Functions/Prevent'
 
 export const ProductExpandedview = (props) => {
 
@@ -8,17 +9,17 @@ export const ProductExpandedview = (props) => {
     return (
         <div className={classes.productExpanded}>
           <div className={classes["productExpanded-images"]}>
-            <div>
+            <div onClick={Prevent(()=>console.log("Child Element!"))}>
               <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="170" height="170" />
             </div>
             <div className={classes["productExpanded-images-small"]}>
-              <div>
+              <div onClick={Prevent(()=>console.log("Child Element!"))}>
                 <Image src={props.items.Picturefile} width="50" height="50" />
               </div>
-              <div>
+              <div onClick={Prevent(()=>console.log("Child Element!"))}>
                 <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
               </div>
-              <div>
+              <div onClick={Prevent(()=>console.log("Child Element!"))}>
                 <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
               </div>
             </div>
@@ -34,7 +35,7 @@ export const ProductExpandedview = (props) => {
             </div>
           </div>
           <ProductExpandedViewItems 
-          {...props} 
+          {...props}
           />
 
         </div>

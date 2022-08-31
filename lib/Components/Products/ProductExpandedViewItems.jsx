@@ -1,11 +1,12 @@
 import classes from './ProductExpandedViewItems.module.css';
+import {Prevent} from '../Functions/Prevent'
 
 export const ProductExpandedViewItems = (props) => {
 
     let itemNumbers = new Set();
 
     return ( 
-        <div className={classes['productExpanded-items']}>
+        <div className={classes['productExpanded-items']} onClick={Prevent(()=>console.log("Child Element!"))}>
         {props.values.map((value, i) => {
           if (!itemNumbers.has(value.ItemNumber)) {
             itemNumbers.add(value.ItemNumber)
