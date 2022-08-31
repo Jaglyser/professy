@@ -9,7 +9,7 @@ export const ProductExpandedViewItems = (props) => {
         {props.values.map((value, i) => {
           if (!itemNumbers.has(value.ItemNumber)) {
             itemNumbers.add(value.ItemNumber)
-            return (<div>
+            return (<div key={i}>
               <div className={classes['productExpanded-details']}>
                   <div>
                     {value.ItemNumber}

@@ -5,7 +5,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import Filters from "../Filter/Filters";
 import TestFilter from "../Filter/TestFilter";
 import SplitPaneContext from "../Panes/SplitPaneContext";
 import ProductList from "../Products/ProductList";
@@ -88,7 +87,7 @@ export const SplitPaneTop = (...jsonData) => {
 
   return (
     <div className={classes["split-pane-top"]} ref={topRef}>
-      <TestFilter {...jsonData} />
+      <TestFilter />
     </div>
   );
 };
