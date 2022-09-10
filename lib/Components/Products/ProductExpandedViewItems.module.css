@@ -12,7 +12,7 @@
 .productExpanded-details {
     font-size: 50%;
     display: grid;  
-    grid-template-columns: 100px 200px 50px;
+    grid-template-columns: 120px 180px 50px;
     text-align: left;
 }
 

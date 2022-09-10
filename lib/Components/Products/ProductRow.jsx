@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ProductExpandedview } from './ProductExpandedView';
 import { ProductRegularView } from './ProductRegularView';
+import classes from './ProductRow.module.css'
 
 
 const ProductRow = (props) => {
@@ -17,12 +18,15 @@ const ProductRow = (props) => {
   
   return (
 
-    <div onClick={startEditingHandler}>
+    <div className={classes.product} onClick={startEditingHandler}>
       {!fullProductView && (
         <ProductRegularView {...props}/>
       )}
       {fullProductView && (
+        <div>
+        <ProductRegularView {...props}/>
         <ProductExpandedview {...props}/>
+        </div>
       )}
     </div>
   );
