@@ -6,7 +6,7 @@ export const ProductExpandedViewItems = (props) => {
     let itemNumbers = new Set();
 
     return ( 
-        <div className={classes['productExpanded-items']} onClick={Prevent(()=>console.log("Child Element!"))}>
+        <div className={classes['productExpanded-items']} >
         {props.values.map((value, i) => {
           if (!itemNumbers.has(value.ItemNumber)) {
             itemNumbers.add(value.ItemNumber)
@@ -16,19 +16,8 @@ export const ProductExpandedViewItems = (props) => {
                     {value.ItemNumber}
                   </div>
                   <div>
-                    {value.Color}
+                    {value.Color} {value.Size}
                   </div>
-                  <div>
-                    {value.Size}
-                  </div>
-                  
-                  <div>
-                    {props.items.Netprice}
-                  </div>
-                  <div>
-                    {props.items.Recommendedretailprice} 
-                  </div>
-                  
                   <div>
                     <input className={classes.input}></input>
                   </div>

@@ -33,11 +33,21 @@ export const ProductExpandedview = (props) => {
                 {props.items.Longdescription}
               </div>
             </div>
+          
           </div>
+          <div className={classes["productExpanded-items"]} onClick={Prevent(()=>console.log("Child Element!"))}>
+            <div className={classes["productExpanded-heading"]}>
+            <div>Item</div>
+            <div>Variant</div>
+            <div>Quantity</div>
+            </div>
           <ProductExpandedViewItems 
           {...props}
           />
-
+            <div>
+              <button className={classes["productExpanded-save"]}>Save</button>
+            </div>
+          </div>
         </div>
 
     )

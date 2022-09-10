@@ -1,26 +1,23 @@
 .productExpanded-items {
     overflow-y: scroll;
+
     font-size: 100%;
     padding: 1rem 0;
-    margin: 20px;
-    max-height: 400px;
+    margin-left: 20px;
+    max-height: 300px;
     min-width: 200px;
 }
 
+
 .productExpanded-details {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 60%;
-    padding: 0 2rem;
-    display: grid;
-    gap: 10px;
-    flex-wrap: wrap;
-    grid-template-columns: auto auto auto auto auto auto;
-    align-items: center;
-    justify-content: space-between;
+    font-size: 50%;
+    display: grid;  
+    grid-template-columns: 100px 200px 50px;
+    text-align: left;
 }
 
 .input {
-    width: 25px;
+    width: 50px;
     height: 25px;
+    
 }
