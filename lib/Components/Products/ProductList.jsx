@@ -1,8 +1,8 @@
 import ProductRow from './ProductRow';
 
-export default function ProductList(jsonData) {
-  let uniqueModelArray = [...new Map(Object.values(jsonData).map((item) => [item["Modelname"], item])).values()]
-  let uniqueValues = uniqueModelArray.map((item) => Object.values(jsonData).filter((values) => values['Modelname'] == item['Modelname']))
+export default function ProductList(props) {
+  let uniqueModelArray = [...new Map(Object.values(props).map((item) => [item["Modelname"], item])).values()]
+  let uniqueValues = uniqueModelArray.map((item) => Object.values(props).filter((values) => values['Modelname'] == item['Modelname']))
 
   return (
     <div>

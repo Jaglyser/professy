@@ -10,6 +10,7 @@ import SplitPaneContext from "../Panes/SplitPaneContext";
 import ProductList from "../Products/ProductList";
 import classes from './SplitPane.module.css';
 import TextField from "@mui/material/TextField";
+import ProductData from "../Products/ProductData";
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);
@@ -123,7 +124,21 @@ export const SplitPaneLeft = (props) => {
 
 export const SplitPaneRight = (jsonData) => {
 
-  const numberOfItems = Object.keys(jsonData).length
+
+
+const [searchTerm, setSearchTerm] = useState("");
+
+const dataset = ProductData;
+
+const filtered = dataset.filter(val => {
+  if (searchTerm == "") {
+    return val
+  } else if (val.Shortdescription.toLowerCase().includes(searchTerm.toLowerCase())) {
+    return val
+  }
+});
+
+const numberOfItems = Object.keys(filtered).length
 
 
   return (
@@ -139,6 +154,9 @@ export const SplitPaneRight = (jsonData) => {
           fullWidth
           label="Search"
           size="small"
+          onChange={(event) =>{
+            setSearchTerm(event.target.value);
+          }}
         />
       </div>
         <div>Net price</div>
@@ -146,7 +164,7 @@ export const SplitPaneRight = (jsonData) => {
         <div>Quantity</div>
       </div>
     <div className={classes["split-plane-right-rows"]}>
-      <ProductList {...jsonData} />
+      <ProductList {...filtered} />
     </div>
     </div>
   );
