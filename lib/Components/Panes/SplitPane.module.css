@@ -1,3 +1,19 @@
+.split-plane-right-container {
+  height: calc(100vh - 100px);
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.split-plane-right-heading {
+  display: grid;
+  grid-template-columns: 330px 120px 180px 50px;
+  font-size: 100%;
+  margin-left: 85px;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 60%;
+}
+
 .split-pane-top,
 .split-pane-right {
   flex: 1;
@@ -10,11 +26,10 @@
   overflow: hidden;
 }
 
-.split-plane-right-container {
-  height: calc(100vh - 100px);
+.split-plane-right-rows {
+  height: calc(100vh - 150px);
   overflow-y: scroll;
   width: 100%;
-  padding: 0 2rem;
 }
 
 .split-pane-bottom {
@@ -30,3 +45,5 @@
   padding: 2%;
   overflow-y: scroll;
 }
+
+

@@ -123,7 +123,15 @@ export const SplitPaneRight = (jsonData) => {
 
   return (
     <div className={classes["split-plane-right-container"]}>
+      <div className={classes["split-plane-right-heading"]}>
+        <div>Sök</div>
+        <div>Net price</div>
+        <div>Retail price</div>
+        <div>Quantity</div>
+      </div>
+    <div className={classes["split-plane-right-rows"]}>
       <ProductList {...jsonData} />
+    </div>
     </div>
   );
 };
