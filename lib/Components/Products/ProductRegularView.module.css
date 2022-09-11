@@ -1,6 +1,6 @@
 .product {
     display: grid;
-    grid-template-columns: 50px 700px;
+    grid-template-columns: 50px 650px;
     grid-gap: 20px;
     justify-content: space-between;
     align-items: center;
@@ -9,21 +9,18 @@
 
   .product-detail {
     display: grid;
-    grid-template-columns: 600px 100px;
+    grid-template-columns: 320px 120px 190px 50px;
     font-size: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .product-priceAndInput {
-    display: grid;
-    grid-template-columns: auto auto 70px;
-    align-items: center;
-    margin-right: 15px;
+    margin-left: 10px;
+    text-align: left;
   }
 
-  .product-price {
+  .product-NetPrice {
+    font-size: 70%;
+    margin-left: 10px;
+  }
+
+  .product-RetailPrice {
     font-size: 70%;
     margin-left: 10px;
   }

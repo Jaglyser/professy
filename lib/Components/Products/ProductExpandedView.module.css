@@ -1,6 +1,6 @@
 .productExpanded {
     display: grid;
-    grid-template-columns: 350px 400px;
+    grid-template-columns: 50px 300px 400px;
     flex-wrap: wrap; 
     gap: 20px;
   }
@@ -8,8 +8,8 @@
   .productImageAndDescription{
     display: grid;
     grid-template-rows: 200px 200px;
-    margin-left:70px;
     text-align: left;
+    margin-left: 10px;
   }
 
   .productExpanded-description {
