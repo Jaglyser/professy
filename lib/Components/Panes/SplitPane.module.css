@@ -6,12 +6,17 @@
 
 .split-plane-right-heading {
   display: grid;
-  grid-template-columns: 330px 120px 180px 50px;
-  font-size: 100%;
-  margin-left: 85px;
+  grid-template-columns: 415px 120px 180px 50px;
   margin-top: 10px;
   text-align: left;
   font-size: 60%;
+  
+}
+
+.split-plane-right-numberOfProductsInSelection {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 80%;
 }
 
 .split-pane-top,
@@ -46,4 +51,7 @@
   overflow-y: scroll;
 }
 
+.search {
+  width: 350px;
+}
 

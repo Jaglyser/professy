@@ -17,7 +17,7 @@ export const ProductRegularView = (props) => {
                 <div>{props.items.Recommendedretailprice}</div>
                 </div>
               <div>
-                <input className={classes['input']}></input>
+                <input className={classes['input']} onClick={Prevent(()=>console.log("Child Element!"))}></input>
               </div>
              
             </div>

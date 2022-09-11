@@ -9,6 +9,7 @@ import TestFilter from "../Filter/TestFilter";
 import SplitPaneContext from "../Panes/SplitPaneContext";
 import ProductList from "../Products/ProductList";
 import classes from './SplitPane.module.css';
+import TextField from "@mui/material/TextField";
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);
@@ -105,6 +106,7 @@ export const SplitPaneLeft = (props) => {
   let children = { children: props.children }
   const topRef = createRef();
   const { clientWidth, setClientWidth } = useContext(SplitPaneContext);
+  
 
   useEffect(() => {
     if (!clientWidth) {
@@ -121,10 +123,24 @@ export const SplitPaneLeft = (props) => {
 
 export const SplitPaneRight = (jsonData) => {
 
+  const numberOfItems = Object.keys(jsonData).length
+
+
   return (
     <div className={classes["split-plane-right-container"]}>
+      <div className={classes["split-plane-right-numberOfProductsInSelection"]}>
+          {numberOfItems} items
+        </div>
       <div className={classes["split-plane-right-heading"]}>
-        <div>Sök</div>
+      <div className={classes.search}>
+        <TextField
+          id="outlined-basic"
+          variant="outlined"
+          fullWidth
+          label="Search"
+          size="small"
+        />
+      </div>
         <div>Net price</div>
         <div>Retail price</div>
         <div>Quantity</div>
