@@ -22,22 +22,30 @@
   }
 
   .separator-row {
-    border: 3px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     cursor: row-resize;
   }
 
   .separator-col {
-    border: 3px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     cursor: col-resize;
   }
 
   .header {
+    display: grid;
+    grid-template-columns: 1200px 100px;
     padding: 1rem 0;
     font-weight: bold;
     font-size: 60%;
-    display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 3px solid rgb(0, 0, 0);
-    height: 100px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    height: 50px;
+    text-align: right;
   }
+
+  .image {
+    text-align: left;
+  }
+
+

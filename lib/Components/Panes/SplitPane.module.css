@@ -32,7 +32,7 @@
 }
 
 .split-plane-right-rows {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 130px);
   overflow-y: scroll;
   width: 100%;
 }

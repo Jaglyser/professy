@@ -14,7 +14,8 @@ export default function App(jsonData, props) {
   return (
     <>
       <header className={classes.header}>
-        <Image height={100} width={300} src="/Images/proffesy.png" />
+        <div>Powered by</div>
+        <div className={classes.image}><Image height={25} width={75} src="/Images/proffesy.png" /></div>
       </header>
       <div className={classes.App}>
         <SplitPane className={classes["split-pane-row"]}>
