@@ -1,3 +1,10 @@
+import { LoginPage } from "../../lib/Components/Login/LoginPage";
+
 export default function hello() {
-    return <div>hello</div>
+    return (
+
+            <LoginPage />
+
+        
+    )
 }
