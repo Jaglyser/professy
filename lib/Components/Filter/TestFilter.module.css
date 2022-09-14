@@ -1,3 +1,8 @@
 .test {
-    font-size: 60%;
-  }
+  font-size: 60%;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 100px 100px;
+}

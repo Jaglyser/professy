@@ -22,8 +22,6 @@ export default function App(jsonData, props) {
           <SplitPaneLeft >
             <SplitPane className={classes["split-pane-col"]}>
               <SplitPaneTop />
-              <Divider className={classes["separator-row"]} />
-              <SplitPaneBottom />
             </SplitPane>
           </SplitPaneLeft>
           <Divider className={classes["separator-col"]} />

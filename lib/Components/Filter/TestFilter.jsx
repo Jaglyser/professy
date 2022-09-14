@@ -2,8 +2,8 @@ import { ClassNames } from '@emotion/react';
 import ProductData from '../Products/ProductData';
 import { TestFilter2 } from './TestFilter2';
 import classes from './TestFilter.module.css';
-import MultipleSelect from './DropDownList';
-import MultipleSelectChip from './DropDownList2';
+import MultipleSelectChip from './MultipleSelectChip';
+import { Fragment } from 'react';
 
 
 export default function TestFilter() {
@@ -20,10 +20,13 @@ export default function TestFilter() {
       'Category',
       'Sub-category',
       'Modelname',
+      'Color',
+      'Size'
 
     ];
 
     return (
+
       <div className={classes.test}>
         {filterCategories.map((item, i) => (
           <MultipleSelectChip 
@@ -32,6 +35,7 @@ export default function TestFilter() {
           />
         ))}
       </div>
+      
     )
 
 }

@@ -50,7 +50,7 @@ const currentCategory = props.items;
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: 200 }}>
         <InputLabel id="demo-multiple-chip-label">{props.items}</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
