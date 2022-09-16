@@ -7,7 +7,7 @@
 
   .productImageAndDescription{
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 250px auto;
     text-align: left;
   }
 

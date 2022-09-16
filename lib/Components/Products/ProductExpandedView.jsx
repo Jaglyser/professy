@@ -15,7 +15,7 @@ export const ProductExpandedview = (props) => {
           </div>
           <div className={classes.productImageAndDescription}>
           <div>
-              <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="200" height="200" />
+              <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="250" height="250" />
           </div>
             
               <div className={classes["productExpanded-description"]}>  
