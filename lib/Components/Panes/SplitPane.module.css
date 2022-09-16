@@ -6,10 +6,12 @@
 
 .split-plane-right-heading {
   display: grid;
-  grid-template-columns: 415px 120px 180px 50px;
+  grid-template-columns: 60% 15% 15% 10%;
   margin-top: 10px;
   text-align: left;
+  align-items: center;
   font-size: 60%;
+  width: 100%;
   
 }
 
@@ -26,7 +28,7 @@
 }
 
 .split-pane-left {
-  min-width: 800px;
+  min-width: 40%;
   height: calc(100vh - 50px);
   flex: 2 2 60%;
   overflow: hidden;
@@ -53,6 +55,8 @@
 }
 
 .search {
-  width: 350px;
+  width: auto;
+  margin-right: 5%;
+  max-width: 300px;
 }
 

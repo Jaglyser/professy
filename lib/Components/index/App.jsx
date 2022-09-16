@@ -13,6 +13,8 @@ export default function App(jsonData, props) {
 
   return (
     <>
+    <div className={classes.mainContainer}>
+      <div className={classes.secondContainer}>
       <header className={classes.header}>
         <div>Powered by</div>
         <div className={classes.image}><Image height={25} width={75} src="/Images/proffesy.png" /></div>
@@ -28,6 +30,8 @@ export default function App(jsonData, props) {
 
           <SplitPaneRight {...jsonData} />
         </SplitPane>
+      </div>
+      </div>
       </div>
     </>
   );

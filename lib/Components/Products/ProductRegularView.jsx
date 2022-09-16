@@ -5,8 +5,8 @@ import {Prevent} from '../Functions/Prevent'
 export const ProductRegularView = (props) => {
     return (
         <div className={classes.product}>
-          <div> <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /> </div>
             <div className={classes['product-detail']}>
+            <div> <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /> </div>
               <div className={classes['product-description']}>
                 {props.items.Shortdescription}
                 </div>

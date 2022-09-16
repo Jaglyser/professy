@@ -1,6 +1,5 @@
 .product {
-    display: grid;
-    grid-template-columns: 50px 650px;
+    width: 100%;
     grid-gap: 20px;
     justify-content: space-between;
     align-items: center;
@@ -9,20 +8,18 @@
 
   .product-detail {
     display: grid;
-    grid-template-columns: 320px 120px 190px 50px;
+    grid-template-columns: 10% 50% 15% 15% 10%;;
     font-size: 100%;
-    margin-left: 10px;
     text-align: left;
+    align-items: center;
   }
 
   .product-NetPrice {
     font-size: 70%;
-    margin-left: 10px;
   }
 
   .product-RetailPrice {
     font-size: 70%;
-    margin-left: 10px;
   }
   
   .input {
