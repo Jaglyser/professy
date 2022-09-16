@@ -9,9 +9,9 @@ export const ProductExpandedview = (props) => {
     return (
         <div className={classes.productExpanded}>
           <div>
-          <div><Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /></div>
-          <div><Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /></div>
-          <div><Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /></div>
+            <div><Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /></div>
+            <div><Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /></div>
+            <div><Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" /></div>
           </div>
           <div className={classes.productImageAndDescription}>
           <div>
@@ -33,7 +33,7 @@ export const ProductExpandedview = (props) => {
           <ProductExpandedViewItems 
           {...props}
           />
-            <div>
+            <div className={classes.saveDiv}>
               <button className={classes["productExpanded-save"]}>Save</button>
             </div>
           </div>

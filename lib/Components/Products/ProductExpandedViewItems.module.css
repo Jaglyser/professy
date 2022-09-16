@@ -2,17 +2,17 @@
     overflow-y: scroll;
     font-size: 100%;
     padding: 1rem 0;
-    margin-left: 20px;
     max-height: 300px;
-    min-width: 200px;
+    width: 100%;
 }
 
 
 .productExpanded-details {
     font-size: 50%;
     display: grid;
-    grid-template-columns: 120px 180px 50px;
+    grid-template-columns: 35% 45% auto;
     text-align: left;
+    margin-left: 5%;
 }
 
 .input {

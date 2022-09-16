@@ -1,17 +1,14 @@
 .product {
     width: 100%;
-    grid-gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: left;
   }
 
   .product-detail {
     display: grid;
-    grid-template-columns: 10% 50% 15% 15% 10%;;
+    grid-template-columns: 10% 50% 15% 15% 9%;;
     font-size: 100%;
     text-align: left;
     align-items: center;
+    margin-left: 1%;
   }
 
   .product-NetPrice {
