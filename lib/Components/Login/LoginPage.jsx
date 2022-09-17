@@ -15,6 +15,13 @@ export const updateData = (key, value, data, setState) => {
 }
 
 export const LoginPage = () => {
+    let test;
+
+    useEffect(() => {
+        if (test != undefined) {
+            () => setStatus(true)
+        }
+    }, [test])
 
     const [token, setToken] = useState()
     const [id, setId] = useState()
@@ -22,6 +29,7 @@ export const LoginPage = () => {
         username: '',
         password: ''
     })
+    const [status, setStatus] = useState()
     const router = useRouter()
 
 
@@ -47,9 +55,12 @@ export const LoginPage = () => {
     const login = async () => {
         try {
             const { data } = await client.mutate({ mutation: loginQuery, variables: { password: values.password, username: values.username } })
+
+            test = data
             console.log(data)
             setToken(data?.credentials?.token)
             setId(data?.credentials?.id)
+            router.push("/")
         } catch (err) {
             console.error("STATUS 403: AUTHENTICATION FAILED")
         }

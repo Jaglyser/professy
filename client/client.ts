@@ -3,8 +3,8 @@ import { setContext } from '@apollo/client/link/context'
 import { RestLink } from 'apollo-link-rest'
 
 const restLink = new RestLink({
-    // uri: 'https://meta-spirit-357111.lm.r.appspot.com/'
-    uri: 'http://localhost:8080/'
+    uri: 'https://meta-spirit-357111.lm.r.appspot.com/'
+    // uri: 'http://localhost:8080/'
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -15,7 +15,7 @@ const authLink = setContext((_, { headers }) => {
             ...headers,
             authorization: token ? `Bearer ${token}` : "",
             "x-access-token": token ? token : '',
-            'involved-party-id': id
+            'involved-party-id': id ? id : ''
         }
     }
 });
