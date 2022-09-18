@@ -8,6 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import ProductData from "../Products/ProductData";
+import { ClassNames } from '@emotion/react';
+import classes from './MultipleSelectChip.module.css'
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -15,7 +17,7 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+      width: 200,
     },
   },
 };
@@ -49,8 +51,8 @@ const currentCategory = props.items;
   };
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 200 }}>
+    <div className={classes.dropdown}>
+      <FormControl size="small" sx={{width: 200 }}>
         <InputLabel id="demo-multiple-chip-label">{props.items}</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"

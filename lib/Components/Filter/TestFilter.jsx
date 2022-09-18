@@ -4,6 +4,7 @@ import { TestFilter2 } from './TestFilter2';
 import classes from './TestFilter.module.css';
 import MultipleSelectChip from './MultipleSelectChip';
 import { Fragment } from 'react';
+import Image from 'next/image';
 
 
 export default function TestFilter() {
@@ -15,25 +16,51 @@ export default function TestFilter() {
     return Object.assign(result, obj);
   }, {}))
 
+  let uniqueModelArray = [...new Map(Object.values(dataFilters).map((item) => [item["Category"], item])).values()]
+
   const filterCategories = [
-      'Brand',
-      'Category',
-      'Sub-category',
-      'Modelname',
-      'Color',
-      'Size'
+      'Helmets',
+      'Shoes',
+      'Clothes',
+      'Bikes',
+      'Lights',
+      'Accessories'
 
     ];
 
-    return (
+    const secondFilterCategories = [
+      "Brand",
+      "Sub-category",
+      "Modelname",
+      "Color"
+    ];
 
-      <div className={classes.test}>
-        {filterCategories.map((item, i) => (
-          <MultipleSelectChip 
-            key={i}
-            items={item}
-          />
-        ))}
+    return (
+      <div>
+
+        <div className={classes.heading}>
+          <div>Categories</div>
+          <div>Filters</div>
+        </div>
+      <div className={classes.columns}>
+        <div className={classes.categories}>
+          {filterCategories.map((item, i) => (
+              <div className={classes.category}>
+                <div><Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="40" height="40" /></div>
+                <div className={classes.text}>{item}</div>
+                </div>
+          ))}
+          </div>
+        <div>
+          {secondFilterCategories.map((item, i) => (
+              <MultipleSelectChip 
+                key={i}
+                items={item}
+              />
+            ))}
+         </div>
+        </div>
+
       </div>
       
     )

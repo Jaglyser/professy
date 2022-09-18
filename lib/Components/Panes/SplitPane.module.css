@@ -28,7 +28,7 @@
 }
 
 .split-pane-left {
-  min-width: 40%;
+  min-width: 70%;
   height: calc(100vh - 50px);
   flex: 2 2 60%;
   overflow: hidden;

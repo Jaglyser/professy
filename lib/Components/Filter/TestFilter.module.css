@@ -1,8 +1,39 @@
-.test {
+.categories {
   font-size: 60%;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: auto auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 90%;
+  height: 50px;
+  margin: 0.7rem 0;
+
+}
+
+.category:hover {
+  background-color: rgba(62, 137, 43, 0.2);
+}
+
+.heading {
+  width: auto;
+  display: grid;
+  grid-template-columns: 200px auto;
+  text-align:left;
+  font-size: 80%;
+  margin: 20px;
+  margin-top:40px;
 }
 
 .columns {
   display: grid;
-  grid-template-columns: 100px 100px;
+  grid-template-columns: 200px auto;
+}
+
+.text {
+  text-align: left;
 }
