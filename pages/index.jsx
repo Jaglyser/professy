@@ -72,6 +72,11 @@ export const getServerSideProps = withIronSessionSsr(async function ({ req, res 
       }
     })
   } catch (err) {
+    if (process.env.NODE_ENV === 'development') {
+      return {
+        props: {}
+      }
+    }
     return {
       redirect: {
         destination: '/login',
