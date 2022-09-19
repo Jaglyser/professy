@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { LoginPage } from '../lib/Components/Login/LoginPage'
 import Link from 'next/link'
+import { getCookies } from 'cookies-next'
 
 const Home = () => {
   const jsonData = ProductData
@@ -33,7 +34,6 @@ const Home = () => {
 
   const data = useQuery(ComplaintsQuery)
   test = data
-  console.log(data)
 
   // if (data.error) {
   //   return <Link href="/login"><a>you need to login in you piece of shit</a></Link>
@@ -46,41 +46,40 @@ const Home = () => {
 
 
 
-// export async function getServerSideProps(context) {
-//   const ComplaintsQuery = gql`
-//     query session {
-//       users @rest(type: "string", path: "users") {
-//         id
-//       }
-//     }`
+export async function getServerSideProps({ req, res }) {
+  const ComplaintsQuery = gql`
+    query session {
+      users @rest(type: "string", path: "users") {
+        id
+      }
+    }`
 
-//   try {
-//     const { loading, error, data } = await client.query({
-//       query: ComplaintsQuery,
-//       context: {
-//         headers: {
+  try {
+    const { id, token } = getCookies({ req, res })
+    const { loading, error, data } = await client.query({
+      query: ComplaintsQuery,
+      context: {
+        headers: {
+          "x-access-token": token,
+          "involved-party-id": id
+        }
+      }
+    })
+  } catch (err) {
+    console.log(err)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    }
+  }
 
-//         }
-//       }
-//     })
-//   } catch (err) {
-//     console.log(err)
-//     return {
-//       redirect: {
-//         destination: '/login',
-//         permanent: false,
-//       },
-//     }
-//   }
-
-//   const cpl = await fetch('https://meta-spirit-357111.lm.r.appspot.com/')
-//   console.log(cpl)
-//   return {
-//     props: {
-//       error: "oops"
-//     }, // will be passed to the page component as props
-//   }
-// }
+  return {
+    props: {
+    }, // will be passed to the page component as props
+  }
+}
 
 
 export default Home

@@ -1,6 +1,7 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { RestLink } from 'apollo-link-rest'
+import { getCookies } from 'cookies-next'
 
 const restLink = new RestLink({
     uri: 'https://meta-spirit-357111.lm.r.appspot.com/'
@@ -8,14 +9,17 @@ const restLink = new RestLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem('token');
-    const id = localStorage.getItem('id');
+    // const token = localStorage.getItem('token');
+    // const token = getCookie('token')
+    // const id = localStorage.getItem('id');
+    // const id = getCookie('id')
+    const { token, id } = getCookies()
     return {
         headers: {
             ...headers,
-            authorization: token ? `Bearer ${token}` : "",
-            "x-access-token": token ? token : '',
-            'involved-party-id': id ? id : ''
+            // authorization: token ? `Bearer ${token}` : "",
+            // "x-access-token": token ? token : '',
+            // 'involved-party-id': id ? id : ''
         }
     }
 });

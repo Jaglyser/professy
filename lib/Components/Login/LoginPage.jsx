@@ -7,7 +7,7 @@ import { gql, useQuery } from '@apollo/client'
 import client from '../../../client/client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-
+import { setCookie } from 'cookies-next'
 
 export const updateData = (key, value, data, setState) => {
     data[key] = value
@@ -61,6 +61,10 @@ export const LoginPage = () => {
             setToken(data?.credentials?.token)
             setId(data?.credentials?.id)
             router.push("/")
+
+
+            setCookie('token', data?.credentials?.token)
+            setCookie('id', data?.credentials?.id)
         } catch (err) {
             console.error("STATUS 403: AUTHENTICATION FAILED")
         }
