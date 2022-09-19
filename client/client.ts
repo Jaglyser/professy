@@ -9,17 +9,15 @@ const restLink = new RestLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-    // const token = localStorage.getItem('token');
-    // const token = getCookie('token')
-    // const id = localStorage.getItem('id');
-    // const id = getCookie('id')
-    const { token, id } = getCookies()
+    const token = localStorage.getItem('token');
+    const id = localStorage.getItem('id');
+
     return {
         headers: {
             ...headers,
             // authorization: token ? `Bearer ${token}` : "",
-            // "x-access-token": token ? token : '',
-            // 'involved-party-id': id ? id : ''
+            "x-access-token": token ? token : '',
+            'involved-party-id': id ? id : ''
         }
     }
 });
@@ -30,15 +28,12 @@ const client = new ApolloClient({
 });
 
 
-export const initClient = () => {
+export const initClient = (token: string, id: string) => {
     const restLink = new RestLink({
-        // uri: 'https://meta-spirit-357111.lm.r.appspot.com/'
-        uri: 'http://localhost:8080/'
+        uri: 'https://meta-spirit-357111.lm.r.appspot.com/'
     });
 
     const authLink = setContext((_, { headers }) => {
-        const token = localStorage.getItem('token');
-        const id = localStorage.getItem('id');
         return {
             headers: {
                 ...headers,

@@ -12,17 +12,13 @@ import { useState, useEffect } from 'react'
 import { LoginPage } from '../lib/Components/Login/LoginPage'
 import Link from 'next/link'
 import { getCookies } from 'cookies-next'
+import { withIronSessionSsr } from 'iron-session/next'
+import { sessionOptions } from '../lib/session'
 
 const Home = () => {
   const jsonData = ProductData
   const router = useRouter()
   const [status, setStatus] = useState()
-  let test
-
-  useEffect(() => {
-    if (test != undefined) setStatus(data)
-  }, [test])
-
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const ComplaintsQuery = gql`
@@ -33,20 +29,29 @@ const Home = () => {
     }`
 
   const data = useQuery(ComplaintsQuery)
-  test = data
+
+  // useEffect(() => {
+  //   if (data.error != undefined) {
+  //     router.push("/login")
+  //   }
+  // }, [data])
+
+
 
   // if (data.error) {
   //   return <Link href="/login"><a>you need to login in you piece of shit</a></Link>
   //   // return <LoginPage />
   // }
+  if (data.loading) {
+    return <div>loading</div>
+  }
   return (
     <App {...jsonData}></App>
   )
 }
 
 
-
-export async function getServerSideProps({ req, res }) {
+export const getServerSideProps = withIronSessionSsr(async function ({ req, res }) {
   const ComplaintsQuery = gql`
     query session {
       users @rest(type: "string", path: "users") {
@@ -55,18 +60,18 @@ export async function getServerSideProps({ req, res }) {
     }`
 
   try {
-    const { id, token } = getCookies({ req, res })
+    const { user } = req.session
+    const client = initClient(user.token, user.id)
     const { loading, error, data } = await client.query({
       query: ComplaintsQuery,
       context: {
         headers: {
-          "x-access-token": token,
-          "involved-party-id": id
+          "x-access-token": user.token,
+          "involved-party-id": user.id
         }
       }
     })
   } catch (err) {
-    console.log(err)
     return {
       redirect: {
         destination: '/login',
@@ -79,7 +84,6 @@ export async function getServerSideProps({ req, res }) {
     props: {
     }, // will be passed to the page component as props
   }
-}
-
+}, sessionOptions)
 
 export default Home

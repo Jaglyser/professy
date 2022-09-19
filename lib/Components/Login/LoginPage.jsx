@@ -7,7 +7,8 @@ import { gql, useQuery } from '@apollo/client'
 import client from '../../../client/client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { setCookie } from 'cookies-next'
+import { setCookie, getCookies } from 'cookies-next'
+import fetchJson, { FetchError } from '../../fetchJson'
 
 export const updateData = (key, value, data, setState) => {
     data[key] = value
@@ -15,27 +16,21 @@ export const updateData = (key, value, data, setState) => {
 }
 
 export const LoginPage = () => {
-    let test;
-
-    useEffect(() => {
-        if (test != undefined) {
-            () => setStatus(true)
-        }
-    }, [test])
-
     const [token, setToken] = useState()
     const [id, setId] = useState()
     const [values, setValues] = useState({
         username: '',
         password: ''
     })
-    const [status, setStatus] = useState()
     const router = useRouter()
 
 
     useEffect(() => {
         localStorage.setItem("token", token);
         localStorage.setItem("id", id);
+        if (token != undefined && id != undefined) {
+            router.push("/")
+        }
     }, [token, id])
 
 
@@ -55,18 +50,20 @@ export const LoginPage = () => {
     const login = async () => {
         try {
             const { data } = await client.mutate({ mutation: loginQuery, variables: { password: values.password, username: values.username } })
-
-            test = data
-            console.log(data)
+            const body = {
+                token: data?.credentials?.token,
+                id: data?.credentials?.id
+            }
+            const test = await fetchJson('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            })
             setToken(data?.credentials?.token)
             setId(data?.credentials?.id)
             router.push("/")
-
-
-            setCookie('token', data?.credentials?.token)
-            setCookie('id', data?.credentials?.id)
         } catch (err) {
-            console.error("STATUS 403: AUTHENTICATION FAILED")
+            console.error(err)
         }
     }
 
