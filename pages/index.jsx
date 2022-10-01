@@ -14,6 +14,8 @@ import Link from 'next/link'
 import { getCookies } from 'cookies-next'
 import { withIronSessionSsr } from 'iron-session/next'
 import { sessionOptions } from '../lib/session'
+import { store } from '../lib/store/index'
+import { Provider } from 'react-redux'
 
 const Home = () => {
   const jsonData = ProductData
@@ -46,7 +48,9 @@ const Home = () => {
     return <div>loading</div>
   }
   return (
-    <App {...jsonData}></App>
+    <Provider store={store}>
+      <App {...jsonData}></App>
+    </Provider>
   )
 }
 
