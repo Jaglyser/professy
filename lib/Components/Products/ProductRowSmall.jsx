@@ -31,7 +31,7 @@ export const ProductRowSmall = (props) => {
 
     const cartItems = useSelector(state => state.cart.items).find(item => item.id === id)
     
-    const test = 0
+    const test = ""
 
     try {
         test = cartItems.quantity
