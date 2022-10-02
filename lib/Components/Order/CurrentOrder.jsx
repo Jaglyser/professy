@@ -1,30 +1,35 @@
 import state from '../../store/index'
 import ProductData from '../Products/ProductData'
+import { useSelector } from 'react-redux'
+import { OrderRow } from './OrderRow'
+import classes from './CurrentOrder.module.css'
 
 
 export const CurrentOrder = () => {
-    const obj = {}
-    for (const key of ProductData) {
-        obj[key.ItemNumber] = 0;
-   }
-   const convertedArray = Object.entries(obj).map(([key, value]) => ({itemnumber: key, amount: value}));
-   console.log(convertedArray);
-    return (
-      <div>
-        test
-        {convertedArray.map((item, i) => (
-          <div>
-            {item.itemnumber} {item.amount}
-          </div>
-        ))}
 
-        {/* {uniqueModelArray.map((item, i) => (
-        <ProductRow 
-          key={i}
-          items={item}
-          values={uniqueValues[i]}
-        />
-      ))} */}
+  const cartQuantity = useSelector(state => state.cart.totalQuantity)
+  const cartItems = useSelector(state => state.cart.items)
+  console.log(cartItems);
+    return (
+      <div className={classes.cart}>
+        test
+        <div>
+          {cartQuantity}
+        </div>
+        <div>
+        {cartItems.map((item) => (
+          <OrderRow
+            key={item.id}
+            item={{
+              id: item.id,
+              title: item.name,
+              quantity: item.quantity,
+              total: item.totalPrice,
+              price: item.price,
+            }}
+          />
+        ))}
+        </div>
       </div> 
     )
         
