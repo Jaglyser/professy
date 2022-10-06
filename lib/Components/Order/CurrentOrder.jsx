@@ -25,6 +25,7 @@ export const CurrentOrder = () => {
               quantity: item.quantity,
               total: item.totalPrice,
               price: item.price,
+              model: item.model,
             }}
           />
         ))}

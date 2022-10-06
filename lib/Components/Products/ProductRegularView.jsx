@@ -1,8 +1,26 @@
 import Image from 'next/image';
 import classes from './ProductRegularView.module.css'
 import {Prevent} from '../Functions/Prevent'
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
+import { useSelector, shallowEqual } from 'react-redux'
 
 export const ProductRegularView = (props) => {
+
+  const model = props.items.Modelname
+
+  const totalModelQuantity = useSelector(state => state.cart.totalQuantityModel).find(item => item.model === model)
+
+  const test2 = ""
+
+  try {
+    test2 = totalModelQuantity.modelQuantity
+  } catch (error) {
+    console.error(error);
+    // expected output: ReferenceError: nonExistentFunction is not defined
+    // Note - error messages will vary depending on browser
+  }
+
     return (
         <div className={classes.product}>
             <div className={classes['product-detail']}>
@@ -17,7 +35,7 @@ export const ProductRegularView = (props) => {
                 <div>{props.items.Recommendedretailprice}</div>
                 </div>
               <div>
-                <input className={classes['input']} onClick={Prevent(()=>console.log("Child Element!"))}></input>
+                <input className={classes['input']} onClick={Prevent(()=>console.log("Child Element!"))} value={test2} />
               </div>
              
             </div>

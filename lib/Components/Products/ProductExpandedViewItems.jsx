@@ -15,7 +15,8 @@ export const ProductExpandedViewItems = (props) => {
             key={i}
             itemid={value.ItemNumber}
             color={value.Color}
-            size={value.Size}/>
+            size={value.Size}
+            model={value.Modelname}/>
               )
           }
         })}

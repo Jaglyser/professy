@@ -9,32 +9,28 @@ export const ProductRowSmall = (props) => {
 
     const dispatch = useDispatch()
 
-    const addToCartHandler = () => {
-        dispatch(cartActions.addItemToCart({
-            id,
-            title,
-            price,
-        }))
-    }
-
     const setCartHandler = (event) => {
         dispatch(cartActions.setItemAmount({
             id,
             title,
             price,
+            model,
             quantity: event.target.value
         }))
     }
     const id = props.itemid
     const title = props.color
     const price = 100
-
+    const model = props.model
     const cartItems = useSelector(state => state.cart.items).find(item => item.id === id)
+    const totalModelQuantity = useSelector(state => state.cart.totalQuantityModel).find(item => item.model === model)
     
     const test = ""
+    const test2 = ""
 
     try {
         test = cartItems.quantity
+        test2 = totalModelQuantity.modelQuantity
       } catch (error) {
         console.error(error);
         // expected output: ReferenceError: nonExistentFunction is not defined
@@ -49,7 +45,7 @@ export const ProductRowSmall = (props) => {
                     {props.itemid}
                 </div>
                 <div>
-                    {props.color} {props.size}
+                    {props.color} {props.size} {test2}
                 </div>
                 <div>
                 <input
