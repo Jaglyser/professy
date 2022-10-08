@@ -16,6 +16,16 @@ export const ProductRegularView = (props) => {
       }))
   }
 
+  const modelQuantityCalcHandler = (event) => {
+    if (event.key === "Enter") {
+      dispatch(cartActions.changeModelQuantityCalc({
+        model,
+        quantity: event.target.value
+    }))
+    }
+
+  }
+
   const model = props.items.Modelname
 
   const totalModelQuantity = useSelector(state => state.cart.totalQuantityModel).find(item => item.model === model)
@@ -39,12 +49,13 @@ export const ProductRegularView = (props) => {
               <div className={classes['product-RetailPrice']} >
                 <div>{props.items.Recommendedretailprice}</div>
                 </div>
-              <div>
+                <div>
                 <input 
                 className={classes['input']}
                 onClick={Prevent(()=>console.log("Child Element!"))} 
                 value={test2} 
                 onChange={modelQuantityHandler}
+                onKeyPress={modelQuantityCalcHandler}
                 type="number"
                 min = "0" />
               </div>

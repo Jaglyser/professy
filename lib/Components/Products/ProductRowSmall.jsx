@@ -10,12 +10,17 @@ export const ProductRowSmall = (props) => {
     const dispatch = useDispatch()
 
     const setCartHandler = (event) => {
+        const eventQuantity = 0
+        if (!event.target.value.trim().length == 0) {
+            eventQuantity = event.target.value
+        }
+
         dispatch(cartActions.setItemAmount({
             id,
             title,
             price,
             model,
-            quantity: event.target.value
+            quantity: eventQuantity
         }))
     }
     const id = props.itemid
@@ -23,7 +28,6 @@ export const ProductRowSmall = (props) => {
     const price = 100
     const model = props.model
     const cartItems = useSelector(state => state.cart.items).find(item => item.id === id)
-    const totalModelQuantity = useSelector(state => state.cart.totalQuantityModel).find(item => item.model === model)
     const test = ""
     if (cartItems) {
         test = cartItems.quantity
