@@ -7,18 +7,23 @@ import { useSelector, shallowEqual } from 'react-redux'
 
 export const ProductRegularView = (props) => {
 
+  const dispatch = useDispatch()
+
+  const modelQuantityHandler = (event) => {
+      dispatch(cartActions.changeModelQuantity({
+          model,
+          quantity: event.target.value
+      }))
+  }
+
   const model = props.items.Modelname
 
   const totalModelQuantity = useSelector(state => state.cart.totalQuantityModel).find(item => item.model === model)
 
   const test2 = ""
 
-  try {
+  if (totalModelQuantity) {
     test2 = totalModelQuantity.modelQuantity
-  } catch (error) {
-    console.error(error);
-    // expected output: ReferenceError: nonExistentFunction is not defined
-    // Note - error messages will vary depending on browser
   }
 
     return (
@@ -35,7 +40,13 @@ export const ProductRegularView = (props) => {
                 <div>{props.items.Recommendedretailprice}</div>
                 </div>
               <div>
-                <input className={classes['input']} onClick={Prevent(()=>console.log("Child Element!"))} value={test2} />
+                <input 
+                className={classes['input']}
+                onClick={Prevent(()=>console.log("Child Element!"))} 
+                value={test2} 
+                onChange={modelQuantityHandler}
+                type="number"
+                min = "0" />
               </div>
              
             </div>

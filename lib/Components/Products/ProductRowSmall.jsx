@@ -24,16 +24,11 @@ export const ProductRowSmall = (props) => {
     const model = props.model
     const cartItems = useSelector(state => state.cart.items).find(item => item.id === id)
     const totalModelQuantity = useSelector(state => state.cart.totalQuantityModel).find(item => item.model === model)
-    
     const test = ""
-
-    try {
+    if (cartItems) {
         test = cartItems.quantity
-      } catch (error) {
-        console.error(error);
-        // expected output: ReferenceError: nonExistentFunction is not defined
-        // Note - error messages will vary depending on browser
-      }
+    }
+
     return (
         
 
