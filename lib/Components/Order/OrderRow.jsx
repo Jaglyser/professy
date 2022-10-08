@@ -9,7 +9,10 @@ export const OrderRow = (props) => {
   const { title, quantity, total, price, id, model } = props.item;
 
   const removeItemHandler = () => {
-    dispatch(cartActions.removeItemFromCart(id));
+    dispatch(cartActions.removeItemFromCart({
+      id,
+      model,
+    }));
   };
 
   const addItemHandler = () => {

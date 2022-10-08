@@ -26,11 +26,9 @@ export const ProductRowSmall = (props) => {
     const totalModelQuantity = useSelector(state => state.cart.totalQuantityModel).find(item => item.model === model)
     
     const test = ""
-    const test2 = ""
 
     try {
         test = cartItems.quantity
-        test2 = totalModelQuantity.modelQuantity
       } catch (error) {
         console.error(error);
         // expected output: ReferenceError: nonExistentFunction is not defined
@@ -45,7 +43,7 @@ export const ProductRowSmall = (props) => {
                     {props.itemid}
                 </div>
                 <div>
-                    {props.color} {props.size} {test2}
+                    {props.color} {props.size}
                 </div>
                 <div>
                 <input
