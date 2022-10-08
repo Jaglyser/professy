@@ -10,18 +10,26 @@ export const ProductRegularView = (props) => {
   const dispatch = useDispatch()
 
   const modelQuantityHandler = (event) => {
+    const eventQuantity = ""
+    if (!event.target.value.trim().length == 0) {
+        eventQuantity = event.target.value
+    }
       dispatch(cartActions.changeModelQuantity({
           model,
-          quantity: event.target.value
+          quantity: eventQuantity
       }))
   }
 
   const modelQuantityCalcHandler = (event) => {
     if (event.key === "Enter") {
+      const eventQuantity = 0
+      if (!event.target.value.trim().length == 0) {
+          eventQuantity = event.target.value
+      }
       dispatch(cartActions.changeModelQuantityCalc({
         model,
-        quantity: event.target.value
-    }))
+        quantity: eventQuantity
+    })) 
     }
 
   }
