@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import ProductData from "../Products/ProductData";
+import ProductData from '../../data/ProductData'
 import { ClassNames } from '@emotion/react';
 import classes from './MultipleSelectChip.module.css'
 

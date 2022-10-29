@@ -1,16 +1,16 @@
 import React, {
   createRef,
+  Fragment,
   useContext,
   useEffect,
   useRef,
   useState,
 } from "react";
 import TestFilter from "../Filter/TestFilter";
-import SplitPaneContext from "../Panes/SplitPaneContext";
-import ProductList from "../Products/ProductList";
+import SplitPaneContext from "./SplitPaneContext";
 import classes from './SplitPane.module.css';
-import TextField from "@mui/material/TextField";
-import ProductData from "../Products/ProductData";
+import { ProductCatalogue } from "../ProductCatalogue/ProductCatalogue";
+import { RightPane } from "../MainPages/RightPane/RightPane";
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);
@@ -122,51 +122,14 @@ export const SplitPaneLeft = (props) => {
   return <div {...children} className={classes['split-pane-left']} ref={topRef} />;
 };
 
-export const SplitPaneRight = (jsonData) => {
-
-
-
-const [searchTerm, setSearchTerm] = useState("");
-
-const dataset = ProductData;
-
-const filtered = dataset.filter(val => {
-  if (searchTerm == "") {
-    return val
-  } else if (val.Shortdescription.toLowerCase().includes(searchTerm.toLowerCase())) {
-    return val
-  }
-});
-
-const numberOfItems = Object.keys(filtered).length
-
+export const SplitPaneRight = () => {
 
   return (
-    <div className={classes["split-plane-right-container"]}>
-      <div className={classes["split-plane-right-numberOfProductsInSelection"]}>
-          {numberOfItems} items
-        </div>
-      <div className={classes["split-plane-right-heading"]}>
-      <div className={classes.search}>
-        <TextField
-          id="outlined-basic"
-          variant="outlined"
-          fullWidth
-          label="Search"
-          size="small"
-          onChange={(event) =>{
-            setSearchTerm(event.target.value);
-          }}
-        />
-      </div>
-        <div>Net price</div>
-        <div>Retail price</div>
-        <div>Quantity</div>
-      </div>
-    <div className={classes["split-plane-right-rows"]}>
-      <ProductList {...filtered} />
-    </div>
-    </div>
+    
+    <Fragment>
+      <RightPane />
+    </Fragment>
+
   );
 };
 

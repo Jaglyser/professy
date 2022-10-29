@@ -1,10 +1,10 @@
-.split-plane-right-container {
+/* .split-plane-right-container {
   height: calc(100vh - 100px);
   width: 100%;
   padding: 0 2rem;
-}
+} */
 
-.split-plane-right-heading {
+/* .split-plane-right-heading {
   display: grid;
   grid-template-columns: 60% 15% 15% 10%;
   margin-top: 10px;
@@ -13,13 +13,13 @@
   font-size: 60%;
   width: 100%;
   
-}
+} */
 
-.split-plane-right-numberOfProductsInSelection {
+/* .split-plane-right-numberOfProductsInSelection {
   margin-top: 10px;
   text-align: left;
   font-size: 80%;
-}
+} */
 
 .split-pane-top,
 .split-pane-right {
@@ -34,11 +34,11 @@
   overflow: hidden;
 }
 
-.split-plane-right-rows {
+/* .split-plane-right-rows {
   height: calc(100vh - 130px);
   overflow-y: scroll;
   width: 100%;
-}
+} */
 
 .split-pane-bottom {
   flex: 1;
@@ -54,9 +54,5 @@
   overflow-y: scroll;
 }
 
-.search {
-  width: auto;
-  margin-right: 5%;
-  max-width: 300px;
-}
+
 

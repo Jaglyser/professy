@@ -1,0 +1,33 @@
+.split-plane-right-container {
+  height: calc(100vh - 100px);
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.split-plane-right-numberOfProductsInSelection {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 80%;
+}
+
+.split-plane-right-heading {
+  display: grid;
+  grid-template-columns: 60% 15% 15% 10%;
+  margin-top: 10px;
+  text-align: left;
+  align-items: center;
+  font-size: 60%;
+  width: 100%;
+}
+
+.split-plane-right-rows {
+  height: calc(100vh - 130px);
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.search {
+  width: auto;
+  margin-right: 5%;
+  max-width: 300px;
+}

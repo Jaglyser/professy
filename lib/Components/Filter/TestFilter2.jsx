@@ -1,4 +1,4 @@
-import ProductData from "../Products/ProductData";
+import ProductData from '../../data/ProductData'
 import { TestFilter3 } from "./TestFilter3";
 import classes from './TestFilter2.module.css'
 

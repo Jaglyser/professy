@@ -1,5 +1,3 @@
-import state from '../../store/index'
-import ProductData from '../Products/ProductData'
 import { useSelector } from 'react-redux'
 import { OrderRow } from './OrderRow'
 import classes from './CurrentOrder.module.css'

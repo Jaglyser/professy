@@ -1,5 +1,5 @@
 import { ClassNames } from '@emotion/react';
-import ProductData from '../Products/ProductData';
+import ProductData from '../../data/ProductData'
 import { TestFilter2 } from './TestFilter2';
 import classes from './TestFilter.module.css';
 import MultipleSelectChip from './MultipleSelectChip';
