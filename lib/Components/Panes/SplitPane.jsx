@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import TestFilter from "../Filter/TestFilter";
 import SplitPaneContext from "./SplitPaneContext";
-import classes from './SplitPane.module.css';
+import classes from "./SplitPane.module.css";
 import { ProductCatalogue } from "../ProductCatalogue/ProductCatalogue";
 import { RightPane } from "../MainPages/RightPane/RightPane";
 
@@ -59,8 +59,7 @@ const SplitPane = ({ children, ...props }) => {
           clientWidth,
           setClientWidth,
           onMouseHoldDown,
-        }}
-      >
+        }}>
         {children}
       </SplitPaneContext.Provider>
     </div>
@@ -95,19 +94,13 @@ export const SplitPaneTop = (...jsonData) => {
 };
 
 export const SplitPaneBottom = () => {
-
-  return (
-    <div className={classes["split-pane-bottom"]}>
-          Placeholder
-    </div>
-  );
+  return <div className={classes["split-pane-bottom"]}>Placeholder</div>;
 };
 
 export const SplitPaneLeft = (props) => {
-  let children = { children: props.children }
+  let children = { children: props.children };
   const topRef = createRef();
   const { clientWidth, setClientWidth } = useContext(SplitPaneContext);
-  
 
   useEffect(() => {
     if (!clientWidth) {
@@ -119,17 +112,16 @@ export const SplitPaneLeft = (props) => {
     topRef.current.style.maxWidth = clientWidth + "px";
   }, [clientWidth]);
 
-  return <div {...children} className={classes['split-pane-left']} ref={topRef} />;
+  return (
+    <div {...children} className={classes["split-pane-left"]} ref={topRef} />
+  );
 };
 
 export const SplitPaneRight = () => {
-
   return (
-    
     <Fragment>
       <RightPane />
     </Fragment>
-
   );
 };
 

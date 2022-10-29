@@ -1,7 +1,7 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 
-import classes from './OrderRow.module.css';
-import { cartActions } from '../../store/cart-slice';
+import classes from "./OrderRow.module.css";
+import { cartActions } from "../../store/cart-slice";
 
 export const OrderRow = (props) => {
   const dispatch = useDispatch();
@@ -9,10 +9,12 @@ export const OrderRow = (props) => {
   const { title, quantity, total, price, id, model } = props.item;
 
   const removeItemHandler = () => {
-    dispatch(cartActions.removeItemFromCart({
-      id,
-      model,
-    }));
+    dispatch(
+      cartActions.removeItemFromCart({
+        id,
+        model,
+      })
+    );
   };
 
   const addItemHandler = () => {
@@ -29,9 +31,11 @@ export const OrderRow = (props) => {
   return (
     <li className={classes.item}>
       <header>
-        <h3>{id} {model}</h3>
+        <h3>
+          {id} {model}
+        </h3>
         <div className={classes.price}>
-          ${total.toFixed(2)}{' '}
+          ${total.toFixed(2)}{" "}
           <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
         </div>
       </header>

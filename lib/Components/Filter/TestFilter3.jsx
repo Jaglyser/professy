@@ -1,14 +1,5 @@
-import classes from './TestFilter3.module.css'
+import classes from "./TestFilter3.module.css";
 
 export const TestFilter3 = (props) => {
-
-
-return (
-    <div className={classes.values}>
-        {props.items}
-    </div>
-)
-
-    
-    
-}
+  return <div className={classes.values}>{props.items}</div>;
+};

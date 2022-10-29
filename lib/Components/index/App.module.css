@@ -7,7 +7,7 @@
 }
 
 .secondContainer {
-  margin:auto;
+  margin: auto;
   width: 98vw;
   height: 98vh;
   max-width: 1600px;
@@ -19,59 +19,57 @@
 }
 
 .App {
-    font-family: "Segoe UI", sans-serif;
-    font-size: 1.2rem;
-    text-align: center;
-    overflow: hidden;
-  }
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  overflow: hidden;
+}
 
-  .split-pane-row {
-    width: auto;
-    height: calc(98vh - 50px);
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
+.split-pane-row {
+  width: auto;
+  height: calc(98vh - 50px);
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+}
 
-  .split-pane-col {
-    width: auto;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+.split-pane-col {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-  .separator-row {
-    border: 1px solid rgb(0, 0, 0);
-    cursor: row-resize;
-  }
+.separator-row {
+  border: 1px solid rgb(0, 0, 0);
+  cursor: row-resize;
+}
 
-  .separator-col {
-    border: 1px solid rgb(0, 0, 0);
-    cursor: col-resize;
-  }
+.separator-col {
+  border: 1px solid rgb(0, 0, 0);
+  cursor: col-resize;
+}
 
-  .header {
-    display: grid;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    grid-template-columns: 20% 70% 10%;
-    font-weight: bold;
-    font-size: 60%;
-    align-items: center;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    height: 50px;
-    text-align: right;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  }
+.header {
+  display: grid;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  grid-template-columns: 20% 70% 10%;
+  font-weight: bold;
+  font-size: 60%;
+  align-items: center;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 50px;
+  text-align: right;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
 
-  .button{
-    height: 30px;
-    width: 50px;
-    align-items: bottom;
-  }
+.button {
+  height: 30px;
+  width: 50px;
+  align-items: bottom;
+}
 
-  .image {
-    text-align: left;
-  }
-
-
+.image {
+  text-align: left;
+}

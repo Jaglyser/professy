@@ -11,7 +11,7 @@ export const ExpandedViewModel = (props) => {
           <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
         </div>
         <div>
-          <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
+              <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />
         </div>
         <div>
           <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="50" height="50" />

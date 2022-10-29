@@ -1,19 +1,15 @@
-import { useSelector } from 'react-redux'
-import { OrderRow } from './OrderRow'
-import classes from './CurrentOrder.module.css'
-
+import { useSelector } from "react-redux";
+import { OrderRow } from "./OrderRow";
+import classes from "./CurrentOrder.module.css";
 
 export const CurrentOrder = () => {
-
-  const cartQuantity = useSelector(state => state.cart.totalQuantity)
-  const cartItems = useSelector(state => state.cart.items)
-    return (
-      <div className={classes.cart}>
-        tests
-        <div>
-          {cartQuantity}
-        </div>
-        <div>
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+  const cartItems = useSelector((state) => state.cart.items);
+  return (
+    <div className={classes.cart}>
+      tests
+      <div>{cartQuantity}</div>
+      <div>
         {cartItems.map((item) => (
           <OrderRow
             key={item.id}
@@ -27,9 +23,7 @@ export const CurrentOrder = () => {
             }}
           />
         ))}
-        </div>
-      </div> 
-    )
-        
-}
-
+      </div>
+    </div>
+  );
+};

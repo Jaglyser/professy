@@ -12,7 +12,6 @@
   width: 90%;
   height: 50px;
   margin: 0.7rem 0;
-
 }
 
 .category:hover {
@@ -23,10 +22,10 @@
   width: auto;
   display: grid;
   grid-template-columns: 200px auto;
-  text-align:left;
+  text-align: left;
   font-size: 80%;
   margin: 20px;
-  margin-top:40px;
+  margin-top: 40px;
 }
 
 .columns {
