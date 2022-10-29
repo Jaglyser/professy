@@ -1,0 +1,45 @@
+.header {
+  position: relative;
+  display: grid;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  grid-template-columns: 90% auto;
+  font-weight: bold;
+  font-size: 60%;
+  align-items: center;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 50px;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.header-content {
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.button {
+  margin-left: 5%;
+  height: 30px;
+  width: auto;
+  min-width: 100px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.selected-button {
+  margin-left: 5%;
+  height: 30px;
+  width: auto;
+  min-width: 100px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: darkgreen;
+  color: white;
+}
+
+.image {
+  text-align: left;
+}

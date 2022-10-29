@@ -8,36 +8,21 @@ import SplitPane, {
   SplitPaneTop,
 } from "../Panes/SplitPane";
 import classes from "./App.module.css";
-import React, { useState } from "react";
 import { CurrentOrder } from "../Order/CurrentOrder";
+import { MainHeader } from "../MainPages/MainHeader";
+import { useSelector } from "react-redux";
+
 
 export default function App(props) {
-  const [mainView, setMainView] = useState(true);
 
-  const startEditingHandler = () => {
-    if (!mainView) {
-      setMainView(true);
-    } else {
-      setMainView(false);
-    }
-  };
+  const selectedView = useSelector((state) => state.pageView.pageViews);
 
   return (
     <>
       <div className={classes.mainContainer}>
         <div className={classes.secondContainer}>
-          <header className={classes.header}>
-            <div>
-              <button className={classes.button} onClick={startEditingHandler}>
-                Order
-              </button>
-            </div>
-            <div>Powered by</div>
-            <div className={classes.image}>
-              <Image height={25} width={75} src="/Images/proffesy.png" />
-            </div>
-          </header>
-          {mainView && (
+          <MainHeader />
+          {selectedView == "Catalogue" && (
             <div className={classes.App}>
               <SplitPane className={classes["split-pane-row"]}>
                 <SplitPaneLeft>
@@ -51,7 +36,6 @@ export default function App(props) {
               </SplitPane>
             </div>
           )}
-          {!mainView && <CurrentOrder></CurrentOrder>}
         </div>
       </div>
     </>

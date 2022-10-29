@@ -1,0 +1,21 @@
+.button {
+  margin-left: 5%;
+  height: 30px;
+  width: auto;
+  min-width: 100px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.selected-button {
+  margin-left: 5%;
+  height: 30px;
+  width: auto;
+  min-width: 100px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: darkgreen;
+  color: white;
+}
