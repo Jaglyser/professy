@@ -11,7 +11,7 @@ export const CurrentOrder = () => {
   const cartItems = useSelector(state => state.cart.items)
     return (
       <div className={classes.cart}>
-        test
+        tests
         <div>
           {cartQuantity}
         </div>
