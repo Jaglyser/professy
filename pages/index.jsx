@@ -49,7 +49,7 @@ const Home = () => {
   }
   return (
     <Provider store={store}>
-      <App {...jsonData}></App>
+      <App  data={jsonData}></App>
     </Provider>
   )
 }

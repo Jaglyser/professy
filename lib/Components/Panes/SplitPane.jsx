@@ -10,7 +10,7 @@ import TestFilter from "../Filter/TestFilter";
 import SplitPaneContext from "./SplitPaneContext";
 import classes from "./SplitPane.module.css";
 import { ProductCatalogue } from "../ProductCatalogue/ProductCatalogue";
-import { RightPane } from "../MainPages/RightPane/RightPane";
+import { RightPane } from "../MainPages/RightPane";
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);
@@ -117,10 +117,10 @@ export const SplitPaneLeft = (props) => {
   );
 };
 
-export const SplitPaneRight = () => {
+export const SplitPaneRight = (props) => {
   return (
     <Fragment>
-      <RightPane />
+      <RightPane {...props} />
     </Fragment>
   );
 };

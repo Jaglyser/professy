@@ -11,7 +11,7 @@ import classes from "./App.module.css";
 import React, { useState } from "react";
 import { CurrentOrder } from "../Order/CurrentOrder";
 
-export default function App(jsonData, props) {
+export default function App(props) {
   const [mainView, setMainView] = useState(true);
 
   const startEditingHandler = () => {
@@ -47,7 +47,7 @@ export default function App(jsonData, props) {
                 </SplitPaneLeft>
                 <Divider className={classes["separator-col"]} />
 
-                <SplitPaneRight {...jsonData} />
+                <SplitPaneRight {...props} />
               </SplitPane>
             </div>
           )}

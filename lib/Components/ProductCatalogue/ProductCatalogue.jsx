@@ -8,9 +8,7 @@ import ProductList from "./ProductList";
 export const ProductCatalogue = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const dataset = ProductData;
-
-  const filtered = dataset.filter((val) => {
+  const filtered = props.data.filter((val) => {
     if (searchTerm == "") {
       return val;
     } else if (
@@ -24,7 +22,6 @@ export const ProductCatalogue = (props) => {
 
   return (
     <Fragment>
-      <div className={classes["split-plane-right-container"]}>
         <div
           className={classes["split-plane-right-numberOfProductsInSelection"]}>
           {numberOfItems} items
@@ -49,7 +46,6 @@ export const ProductCatalogue = (props) => {
         <div className={classes["split-plane-right-rows"]}>
           <ProductList {...filtered} />
         </div>
-      </div>
     </Fragment>
   );
 };
