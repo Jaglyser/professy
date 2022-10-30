@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import classes from "./MainHeader.module.css";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import { pageViewActions } from "../../store/pageView";
+import { pageViewActions } from "../../../store/pageView";
 import { useSelector } from "react-redux";
 import { Buttons } from "./Buttons";
 

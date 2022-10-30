@@ -11,6 +11,7 @@ import SplitPaneContext from "./SplitPaneContext";
 import classes from "./SplitPane.module.css";
 import { ProductCatalogue } from "../ProductCatalogue/ProductCatalogue";
 import { RightPane } from "../MainPages/RightPane";
+import { LeftPane } from "../MainPages/LeftPane";
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);
@@ -87,9 +88,9 @@ export const SplitPaneTop = (...jsonData) => {
   }, [clientHeight]);
 
   return (
-    <div className={classes["split-pane-top"]} ref={topRef}>
-      <TestFilter />
-    </div>
+      <div ref={topRef}>
+        <TestFilter />
+      </div>
   );
 };
 

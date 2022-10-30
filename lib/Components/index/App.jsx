@@ -9,9 +9,8 @@ import SplitPane, {
 } from "../Panes/SplitPane";
 import classes from "./App.module.css";
 import { CurrentOrder } from "../Order/CurrentOrder";
-import { MainHeader } from "../MainPages/MainHeader";
+import { MainHeader } from "../MainPages/Header/MainHeader";
 import { useSelector } from "react-redux";
-
 
 export default function App(props) {
 
@@ -22,8 +21,9 @@ export default function App(props) {
       <div className={classes.mainContainer}>
         <div className={classes.secondContainer}>
           <MainHeader />
-          {selectedView == "Catalogue" && (
-            <div className={classes.App}>
+          <div className={classes.App}>
+            {selectedView == "Start" && <div>startpage</div>}
+            {selectedView != "Start" && (
               <SplitPane className={classes["split-pane-row"]}>
                 <SplitPaneLeft>
                   <SplitPane className={classes["split-pane-col"]}>
@@ -34,8 +34,8 @@ export default function App(props) {
 
                 <SplitPaneRight {...props} />
               </SplitPane>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </>

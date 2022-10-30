@@ -1,5 +1,10 @@
-import { Fragment } from "react";
+import TestFilter from "../Filter/TestFilter";
+import classes from "./LeftPane.module.css";
 
 export const LeftPane = () => {
-  return <Fragment></Fragment>;
+  return (
+    <div className={classes["split-pane-top"]}>
+      <TestFilter />
+    </div>
+  );
 };

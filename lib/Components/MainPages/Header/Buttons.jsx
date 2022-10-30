@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import classes from './Buttons.module.css'
-import { pageViewActions } from "../../store/pageView";
+import classes from "./Buttons.module.css";
+import { pageViewActions } from "../../../store/pageView";
 
 export const Buttons = (props) => {
   const selectedView = useSelector((state) => state.pageView.pageViews);
