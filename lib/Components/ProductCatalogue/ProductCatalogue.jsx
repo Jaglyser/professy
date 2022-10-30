@@ -21,31 +21,31 @@ export const ProductCatalogue = (props) => {
   const numberOfItems = Object.keys(filtered).length;
 
   return (
-    <Fragment className={classes.background}>
+    <Fragment>
+      <div className={classes["split-plane-right-heading"]}>
         <div
-          className={classes["split-plane-right-numberOfProductsInSelection"]}>
+          className={classes.numberOfProductsInSelection}>
           {numberOfItems} items
         </div>
-        <div className={classes["split-plane-right-heading"]}>
-          <div className={classes.search}>
-            <TextField
-              id="outlined-basic"
-              variant="outlined"
-              fullWidth
-              label="Search"
-              size="small"
-              onChange={(event) => {
-                setSearchTerm(event.target.value);
-              }}
-            />
-          </div>
-          <div>Net price</div>
-          <div>Retail price</div>
-          <div>Quantity</div>
+        <div className={classes.search}>
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            fullWidth
+            label="Search"
+            size="small"
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
         </div>
-        <div className={classes["split-plane-right-rows"]}>
-          <ProductList {...filtered} />
-        </div>
+        <div>Net price</div>
+        <div>Retail price</div>
+        <div>Quantity</div>
+      </div>
+      <div className={classes["split-plane-right-rows"]}>
+        <ProductList {...filtered} />
+      </div>
     </Fragment>
   );
 };
