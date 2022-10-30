@@ -2,10 +2,14 @@
 .split-pane-right {
   flex: 1;
   overflow: hidden;
+  background-color: solid rgb(255, 255, 255) !important;
 }
 
 .split-pane-top {
   text-align: left;
   padding: 2%;
   overflow-y: scroll;
+  border-left: 8px solid rgb(230, 230, 230);
+  height: calc(100vh - 50px);
+  background-color: white;
 }

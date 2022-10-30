@@ -22,13 +22,8 @@
 }
 
 .productExpanded-items {
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  border-color: black;
   font-size: 100%;
   padding: 1rem 0;
-  background-color: rgba(62, 137, 43, 0.2);
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   margin: 2%;
 }
 

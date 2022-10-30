@@ -8,6 +8,7 @@
   margin-top: 10px;
   text-align: left;
   font-size: 80%;
+  background-color: white;
 }
 
 .split-plane-right-heading {
@@ -18,16 +19,22 @@
   align-items: center;
   font-size: 60%;
   width: 100%;
+  background-color: white;
 }
 
 .split-plane-right-rows {
   height: calc(100vh - 130px);
   overflow-y: scroll;
   width: 100%;
+  
 }
 
 .search {
   width: auto;
   margin-right: 5%;
   max-width: 300px;
+}
+
+.background {
+  background-color: solid rgb(230, 230, 230);
 }

@@ -22,11 +22,11 @@ export const MainHeader = () => {
 
   return (
     <header className={classes.header}>
-      <div className={classes["header-content"]}>
-        <Buttons value="Start" />
-        <Buttons value="Catalogue" />
-        <Buttons value="Orders" />
-        <Buttons value="History" />
+      <div>
+        <Buttons value="Start" text="HOMEPAGE" />
+        <Buttons value="Catalogue" text="PRODUCT CATALOGUE" />
+        <Buttons value="Orders" text="CURRRENT ORDER" />
+        <Buttons value="History" text="PREVIOUS ORDERS" />
       </div>
       <div className={classes.image}>
         <Image height={25} width={75} src="/Images/proffesy.png" />

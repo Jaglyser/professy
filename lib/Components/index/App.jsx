@@ -11,6 +11,7 @@ import classes from "./App.module.css";
 import { CurrentOrder } from "../Order/CurrentOrder";
 import { MainHeader } from "../MainPages/Header/MainHeader";
 import { useSelector } from "react-redux";
+import "@fontsource/barlow";
 
 export default function App(props) {
 

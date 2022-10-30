@@ -14,10 +14,6 @@
   margin: 0.7rem 0;
 }
 
-.category:hover {
-  background-color: rgba(62, 137, 43, 0.2);
-}
-
 .heading {
   width: auto;
   display: grid;
@@ -26,6 +22,7 @@
   font-size: 80%;
   margin: 20px;
   margin-top: 40px;
+  font-weight: bold;
 }
 
 .columns {

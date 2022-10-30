@@ -35,9 +35,6 @@ export const ExpandedViewModel = (props) => {
           <div>Quantity</div>
         </div>
         <ExpandedViewItems {...props} />
-        <div className={classes.saveDiv}>
-          <button className={classes["productExpanded-save"]}>Save</button>
-        </div>
       </div>
     </div>
   );

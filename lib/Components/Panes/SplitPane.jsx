@@ -89,7 +89,7 @@ export const SplitPaneTop = (...jsonData) => {
 
   return (
       <div ref={topRef}>
-        <TestFilter />
+        <LeftPane />
       </div>
   );
 };

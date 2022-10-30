@@ -3,9 +3,10 @@
   height: 30px;
   width: auto;
   min-width: 100px;
-  border: 1px solid #ccc;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: white;
+  border-radius: 10px;
+  font-family: "Barlow";
 }
 
 .selected-button {
@@ -13,9 +14,8 @@
   height: 30px;
   width: auto;
   min-width: 100px;
-  border: 1px solid #ccc;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: darkgreen;
-  color: white;
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(230, 230, 230);
+  font-family: "Barlow";
 }

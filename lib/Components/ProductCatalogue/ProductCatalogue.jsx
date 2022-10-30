@@ -21,7 +21,7 @@ export const ProductCatalogue = (props) => {
   const numberOfItems = Object.keys(filtered).length;
 
   return (
-    <Fragment>
+    <Fragment className={classes.background}>
         <div
           className={classes["split-plane-right-numberOfProductsInSelection"]}>
           {numberOfItems} items

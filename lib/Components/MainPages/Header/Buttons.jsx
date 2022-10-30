@@ -23,7 +23,7 @@ export const Buttons = (props) => {
           className={classes["selected-button"]}
           value={props.value}
           onClick={setPageView}>
-          {props.value}
+          {props.text}
         </button>
       )}
       {selectedView != props.value && (
@@ -31,7 +31,7 @@ export const Buttons = (props) => {
           className={classes.button}
           value={props.value}
           onClick={setPageView}>
-          {props.value}
+          {props.text}
         </button>
       )}
     </Fragment>

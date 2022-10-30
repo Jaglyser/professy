@@ -7,14 +7,26 @@
 }
 
 .productExpanded-details {
+  font-weight: bold;
   font-size: 50%;
   display: grid;
   grid-template-columns: 35% 45% auto;
   text-align: left;
   margin-left: 5%;
+  border-bottom: 2px solid rgb(230, 230, 230);
+  align-items: center;
+  height: 50px;
 }
 
 .input {
   width: 50px;
   height: 25px;
+  margin-left: 5%;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 5px;
 }
+
+.input:focus {
+    outline: none;
+}
+

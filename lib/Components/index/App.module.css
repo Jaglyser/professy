@@ -3,31 +3,30 @@
   height: 100vh;
   max-width: 100%;
   display: flex;
-  background-color: rgba(62, 137, 43, 0.2);
+  background-color: solid rgb(230, 230, 230);
 }
 
 .secondContainer {
   margin: auto;
-  width: 98vw;
-  height: 98vh;
+  width: 100vw;
+  height: 100vh;
   max-width: 1600px;
   align-items: center;
   text-align: center;
-  background-color: rgba(255, 255, 255);
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: solid rgb(230, 230, 230);
 }
 
 .App {
-  font-family: "Barlow", sans-serif;
+  font-family: "Barlow";
   font-size: 1.2rem;
   text-align: center;
   overflow: hidden;
+  background-color: rgb(230, 230, 230);
 }
 
 .split-pane-row {
   width: auto;
-  height: calc(98vh - 50px);
+  height: calc(100vh - 50px);
   max-width: 100%;
   display: flex;
   flex-direction: row;
@@ -41,12 +40,12 @@
 }
 
 .separator-row {
-  border: 1px solid rgb(0, 0, 0);
+  border: 4px solid rgb(230, 230, 230);
   cursor: row-resize;
 }
 
 .separator-col {
-  border: 1px solid rgb(0, 0, 0);
+  border: 4px solid rgb(230, 230, 230);
   cursor: col-resize;
 }
 
@@ -61,7 +60,6 @@
   border-bottom: 1px solid rgb(0, 0, 0);
   height: 50px;
   text-align: right;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .button {

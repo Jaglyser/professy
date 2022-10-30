@@ -39,10 +39,10 @@ export default function TestFilter() {
   ];
 
   return (
-    <div>
+    <div className={classes.background}>
       <div className={classes.heading}>
-        <div>Categories</div>
-        <div>Filters</div>
+        <div>Category</div>
+        <div>Sub category</div>
       </div>
       <div className={classes.columns}>
         <div className={classes.categories}>

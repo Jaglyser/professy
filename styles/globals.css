@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Barlow", sans-serif;
+  font-family: "Barlow";
   overflow: hidden;
 }
 
@@ -19,6 +19,7 @@ a {
   height: calc(100vh - 100px);
   overflow-y: scroll;
   width: 100%;
+  background-color: rgb(230, 230, 230);
 }
 
 .App,
