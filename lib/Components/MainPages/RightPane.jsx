@@ -6,13 +6,18 @@ import { CurrentOrder } from "../Order/CurrentOrder";
 
 export const RightPane = (props) => {
   const selectedView = useSelector((state) => state.pageView.pageViews);
+  const filterValues = useSelector((state) => state.filters.filters);
+  const data = props.data
 
+  const filter = filterValues.map((item) => item.Category)
+  const res = data.filter((item) => filter.includes(item.Category));
+
+  console.log(res);
   return (
     <div className={classes["split-plane-right-container"]}>
-      {selectedView == "Catalogue" && <ProductCatalogue {...props} />}
+      {selectedView == "Catalogue" && <ProductCatalogue data={res} />}
       {selectedView == "Orders" && <CurrentOrder />}
-      {selectedView == "Start" && <ProductCatalogue {...props} />}
-      {selectedView == "History" && <ProductCatalogue {...props} />}
+      {selectedView == "History" && <div />}
     </div>
   );
 };

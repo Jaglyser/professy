@@ -6,7 +6,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import TestFilter from "../Filter/TestFilter";
 import SplitPaneContext from "./SplitPaneContext";
 import classes from "./SplitPane.module.css";
 import { ProductCatalogue } from "../ProductCatalogue/ProductCatalogue";
@@ -73,7 +72,7 @@ export const Divider = (props) => {
   return <div {...props} onMouseDown={onMouseHoldDown} />;
 };
 
-export const SplitPaneTop = (...jsonData) => {
+export const SplitPaneTop = (props) => {
   const topRef = createRef();
   const { clientHeight, setClientHeight } = useContext(SplitPaneContext);
 
@@ -89,7 +88,7 @@ export const SplitPaneTop = (...jsonData) => {
 
   return (
       <div ref={topRef}>
-        <LeftPane />
+        <LeftPane data={props.data}/>
       </div>
   );
 };

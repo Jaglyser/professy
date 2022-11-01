@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import ProductList from "./ProductList";
 
 export const ProductCatalogue = (props) => {
+  
   const [searchTerm, setSearchTerm] = useState("");
 
   const filtered = props.data.filter((val) => {

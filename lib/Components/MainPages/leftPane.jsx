@@ -1,10 +1,10 @@
-import TestFilter from "../Filter/TestFilter";
+import { FilterMenu } from "../FilterMenu/FilterMenu";
 import classes from "./LeftPane.module.css";
 
-export const LeftPane = () => {
+export const LeftPane = (props) => {
   return (
     <div className={classes["split-pane-top"]}>
-      <TestFilter />
+      <FilterMenu data={props.data}/>
     </div>
   );
 };

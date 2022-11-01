@@ -26,9 +26,9 @@ export default function App(props) {
             {selectedView == "Start" && <div>startpage</div>}
             {selectedView != "Start" && (
               <SplitPane className={classes["split-pane-row"]}>
-                <SplitPaneLeft>
+                <SplitPaneLeft {...props}>
                   <SplitPane className={classes["split-pane-col"]}>
-                    <SplitPaneTop />
+                    <SplitPaneTop {...props}/>
                   </SplitPane>
                 </SplitPaneLeft>
                 <Divider className={classes["separator-col"]} />
