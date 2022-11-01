@@ -11,8 +11,7 @@ export const RightPane = (props) => {
 
   const filter = filterValues.map((item) => item.Category)
   const res = data.filter((item) => filter.includes(item.Category));
-
-  console.log(res);
+  
   return (
     <div className={classes["split-plane-right-container"]}>
       {selectedView == "Catalogue" && <ProductCatalogue data={res} />}

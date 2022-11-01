@@ -10,14 +10,14 @@ export const SelectBox = (props) => {
   const setFilter = (event) => {
     dispatch(
       filtersActions.addFilter({
-        value,
+        category, value,
       })
     );
   };
   const removeFilter = (event) => {
     dispatch(
       filtersActions.removeFilter({
-        value,
+        category, value,
       })
     );
   };
