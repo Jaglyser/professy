@@ -1,4 +1,5 @@
 import { SelectBox } from "./SelectBox";
+import { useSelector } from "react-redux";
 
 export const FilterMenu = (props) => {
   const unique = [...new Set(props.data.map((item) => item.Category))];

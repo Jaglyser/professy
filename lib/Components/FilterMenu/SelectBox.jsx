@@ -1,7 +1,7 @@
 import classes from "./SelectBox.module.css";
 import { useDispatch } from "react-redux";
 import { filtersActions } from "../../store/filters";
-import { useSelector, shallowEqual } from "react-redux";
+import { useSelector } from "react-redux";
 export const SelectBox = (props) => {
   const dispatch = useDispatch();
   const value = props.value
