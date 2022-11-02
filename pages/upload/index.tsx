@@ -1,7 +1,7 @@
 import { Input } from "@mui/material";
 import { ChangeEvent } from "react";
 import Papa from 'papaparse'
-import client from "../../client/client";
+// import client from "../../client/client";
 import { gql } from "@apollo/client";
 
 export default function Upload() {
@@ -17,7 +17,7 @@ export default function Upload() {
 `
     const sendData = async (data: any) => {
         try {
-            client.mutate({ mutation: dataMutation, variables: { data } })
+            // client.mutate({ mutation: dataMutation, variables: { data } })
         } catch (err) {
             console.log(err)
         }
