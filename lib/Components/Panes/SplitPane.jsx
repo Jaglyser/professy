@@ -8,8 +8,6 @@ import React, {
 } from "react";
 import SplitPaneContext from "./SplitPaneContext";
 import classes from "./SplitPane.module.css";
-import { RightPane } from "../MainPages/RightPane";
-import { LeftPane } from "../MainPages/LeftPane";
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);

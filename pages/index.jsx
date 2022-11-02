@@ -104,7 +104,6 @@ export const getServerSideProps = withIronSessionSsr(async function ({ req, res 
       }
     }
   }
-  console.log(req.session)
 
   return {
     props: {
