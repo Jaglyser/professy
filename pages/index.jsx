@@ -23,14 +23,14 @@ const Home = () => {
   const [status, setStatus] = useState()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  const ComplaintsQuery = gql`
-    query session {
-      users @rest(type: "string", path: "users") {
-        id
-      }
-    }`
+  // const ComplaintsQuery = gql`
+  //   query session {
+  //     users @rest(type: "string", path: "users") {
+  //       id
+  //     }
+  //   }`
 
-  const data = useQuery(ComplaintsQuery)
+  // const data = useQuery(ComplaintsQuery)
 
   // useEffect(() => {
   //   if (data.error != undefined) {
@@ -44,50 +44,67 @@ const Home = () => {
   //   return <Link href="/login"><a>you need to login in you piece of shit</a></Link>
   //   // return <LoginPage />
   // }
-  if (data.loading) {
-    return <div>loading</div>
-  }
+  // if (data.loading) {
+  //   return <div>loading</div>
+  // }
   return (
     <Provider store={store}>
-      <App  data={jsonData}></App>
+      <App data={jsonData}></App>
     </Provider>
   )
 }
 
 
 export const getServerSideProps = withIronSessionSsr(async function ({ req, res }) {
-  const ComplaintsQuery = gql`
-    query session {
-      users @rest(type: "string", path: "users") {
-        id
-      }
-    }`
+  // const ComplaintsQuery = gql`
+  //   query session {
+  //     users @rest(type: "string", path: "users") {
+  //       id
+  //     }
+  //   }`
 
+  const { user } = req.session
   try {
-    const { user } = req.session
-    const client = initClient(user.token, user.id)
-    const { loading, error, data } = await client.query({
-      query: ComplaintsQuery,
-      context: {
-        headers: {
-          "x-access-token": user.token,
-          "involved-party-id": user.id
-        }
-      }
-    })
+
+
+    // const client = initClient(user.token, user.id)
+    // const { loading, error, data } = await client.query({
+    //   query: ComplaintsQuery,
+    //   context: {
+    //     headers: {
+    //       "x-access-token": user.token,
+    //       "involved-party-id": user.id
+    //     }
+    //   }
+    // })
   } catch (err) {
-    if (process.env.NODE_ENV === 'development') {
-      return {
-        props: {}
-      }
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //   return {
+    //     props: {}
+    //   }
+    // }
+
+    // return {
+    //   redirect: {
+    //     destination: '/login',
+    //     permanent: false,
+    //   },
+    // }
+  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   return {
+  //     props: {}
+  //   }
+  // }
+  if (!user) {
     return {
       redirect: {
         destination: '/login',
-        permanent: false,
-      },
+        permanent: false
+      }
     }
   }
+  console.log(req.session)
 
   return {
     props: {

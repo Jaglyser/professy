@@ -7,7 +7,6 @@ import { gql, useQuery } from "@apollo/client";
 import client from "../../../client/client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { setCookie, getCookies } from "cookies-next";
 import fetchJson, { FetchError } from "../../fetchJson";
 
 export const updateData = (key, value, data, setState) => {
@@ -42,23 +41,49 @@ export const LoginPage = () => {
       }
     }
   `;
-  const login = async () => {
+
+  // const login = async () => {
+  //   try {
+  //     const { data } = await client.mutate({
+  //       mutation: loginQuery,
+  //       variables: { password: values.password, username: values.username },
+  //     });
+  //     const body = {
+  //       token: data?.credentials?.token,
+  //       id: data?.credentials?.id,
+  //     };
+  //     const test = await fetchJson("/api/login", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(body),
+  //     });
+  //     setToken(data?.credentials?.token);
+  //     setId(data?.credentials?.id);
+  //     router.push("/");
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
+  const loginTemp = async () => {
     try {
-      const { data } = await client.mutate({
-        mutation: loginQuery,
-        variables: { password: values.password, username: values.username },
-      });
+      if (process.env.NEXT_PUBLIC_USER != values.username || process.env.NEXT_PUBLIC_PASSWORD != values.password) {
+        // console.log(process.env.NEXT_PUBLIC_USER)
+        // console.log(process.env.NEXT_PUBLIC_PASSWORD)
+        return
+      }
+
       const body = {
-        token: data?.credentials?.token,
-        id: data?.credentials?.id,
+        token: 'token',
+        id: 'id',
       };
+
       const test = await fetchJson("/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      setToken(data?.credentials?.token);
-      setId(data?.credentials?.id);
+
       router.push("/");
     } catch (err) {
       console.error(err);
@@ -68,7 +93,7 @@ export const LoginPage = () => {
   return (
     <div className={classes.main}>
       <div className={classes.loginbox}>
-        <form onSubmit={login()}>
+        <form onSubmit={() => loginTemp()}>
           <div className={classes.logo}>
             <Image height={70} width={210} src="/Images/proffesy.png" />
           </div>
@@ -104,7 +129,7 @@ export const LoginPage = () => {
             />
           </div>
           <div className={classes.loginbutton}>
-            <Button variant="contained" onClick={() => login()} color="success">
+            <Button variant="contained" onClick={() => loginTemp()} color="success">
               Login
             </Button>
           </div>
