@@ -5,9 +5,11 @@ import React, {
   useEffect,
   useRef,
   useState,
-} from "react";
-import SplitPaneContext from "./SplitPaneContext";
-import classes from "./SplitPane.module.css";
+} from "react"
+import SplitPaneContext from "./SplitPaneContext"
+import classes from "./SplitPane.module.css"
+import { LeftPane } from "../MainPages/LeftPane"
+import { RightPane } from "../MainPages/RightPane"
 
 const SplitPane = ({ children, ...props }) => {
   const [clientHeight, setClientHeight] = useState(null);
