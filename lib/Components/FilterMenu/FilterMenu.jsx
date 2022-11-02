@@ -14,13 +14,6 @@ export const FilterMenu = (props) => {
   const uniqueCategory = [...new Set(data.map((item) => item.Category))];
   const uniqueBrands = [...new Set(filteredData.map((item) => item.Brand))];
 
-
- 
-
-
-
-  console.log(filterValue);
-
   return (
     <div className={classes.grid}>
       <div>

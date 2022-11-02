@@ -68,8 +68,6 @@ export const LoginPage = () => {
   const loginTemp = async () => {
     try {
       if (process.env.NEXT_PUBLIC_USER != values.username || process.env.NEXT_PUBLIC_PASSWORD != values.password) {
-        // console.log(process.env.NEXT_PUBLIC_USER)
-        // console.log(process.env.NEXT_PUBLIC_PASSWORD)
         return
       }
 
@@ -86,7 +84,6 @@ export const LoginPage = () => {
 
       router.push("/");
     } catch (err) {
-      console.error(err);
     }
   };
 

@@ -16,7 +16,6 @@ export default function Upload() {
     }
 `
     const sendData = async (data: any) => {
-        console.log(data)
         try {
             client.mutate({ mutation: dataMutation, variables: { data } })
         } catch (err) {
