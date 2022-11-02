@@ -4,14 +4,12 @@ import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    // <ApolloProvider client={client}>
     <>
       <Head>
         <title>Proffesy</title>
       </Head>
       <Component {...pageProps} />
     </>
-    // </ApolloProvider>
   )
 }
 

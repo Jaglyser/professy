@@ -1,10 +1,7 @@
-import next from "next";
 import classes from "./LoginPage.module.css";
 import Image from "next/image";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { gql, useQuery } from "@apollo/client";
-import client from "../../../client/client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import fetchJson, { FetchError } from "../../fetchJson";
@@ -31,16 +28,7 @@ export const LoginPage = () => {
     }
   }, [token, id]);
 
-  const loginQuery = gql`
-    mutation LoginQuery($username: String, $password: String) {
-      credentials(input: { username: $username, password: $password })
-        @rest(type: "string", path: "authenticate", method: "POST") {
-        token
-        secret
-        id
-      }
-    }
-  `;
+
 
   // const login = async () => {
   //   try {
