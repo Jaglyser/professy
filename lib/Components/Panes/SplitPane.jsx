@@ -8,7 +8,6 @@ import React, {
 } from "react";
 import SplitPaneContext from "./SplitPaneContext";
 import classes from "./SplitPane.module.css";
-import { ProductCatalogue } from "../ProductCatalogue/ProductCatalogue";
 import { RightPane } from "../MainPages/RightPane";
 import { LeftPane } from "../MainPages/LeftPane";
 
@@ -87,9 +86,9 @@ export const SplitPaneTop = (props) => {
   }, [clientHeight]);
 
   return (
-      <div ref={topRef}>
-        <LeftPane data={props.data}/>
-      </div>
+    <div ref={topRef}>
+      <LeftPane data={props.data} />
+    </div>
   );
 };
 
