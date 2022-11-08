@@ -45,7 +45,7 @@ export const OrderRow = (props) => {
     );
   };
 
-  const cartItems = useSelector((state) => state.cart.items).find(
+  const cartItems = useSelector((state) => state.cart.order1.items).find(
     (item) => item.id === id
   );
   const test = "";

@@ -39,7 +39,7 @@ export const ProductRegularView = (props) => {
   const model = props.items.Modelname;
 
   const totalModelQuantity = useSelector(
-    (state) => state.cart.totalQuantityModel
+    (state) => state.cart.order1.totalQuantityModel
   ).find((item) => item.model === model);
 
   const test2 = "";

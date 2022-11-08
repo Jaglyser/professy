@@ -8,13 +8,12 @@ import SplitPane, {
   SplitPaneTop,
 } from "../Panes/SplitPane";
 import classes from "./App.module.css";
-import { CurrentOrder } from "../Order/CurrentOrder";
+import { CurrentOrder } from "../CurrentOrder/CurrentOrder";
 import { MainHeader } from "../MainPages/Header/MainHeader";
 import { useSelector } from "react-redux";
 import "@fontsource/barlow";
 
 export default function App(props) {
-
   const selectedView = useSelector((state) => state.pageView.pageViews);
 
   return (
@@ -28,7 +27,7 @@ export default function App(props) {
               <SplitPane className={classes["split-pane-row"]}>
                 <SplitPaneLeft {...props}>
                   <SplitPane className={classes["split-pane-col"]}>
-                    <SplitPaneTop {...props}/>
+                    <SplitPaneTop {...props} />
                   </SplitPane>
                 </SplitPaneLeft>
                 <Divider className={classes["separator-col"]} />

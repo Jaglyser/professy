@@ -26,7 +26,7 @@ export const ListRowSmall = (props) => {
   const title = props.color;
   const price = 100;
   const model = props.model;
-  const cartItems = useSelector((state) => state.cart.items).find(
+  const cartItems = useSelector((state) => state.cart.order1.items).find(
     (item) => item.id === id
   );
   const test = "";
