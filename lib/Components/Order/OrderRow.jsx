@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import Image from "next/image";
 import classes from "./OrderRow.module.css";
 import { cartActions } from "../../store/cart-slice";
 
@@ -28,26 +28,55 @@ export const OrderRow = (props) => {
     );
   };
 
+  const setCartHandler = (event) => {
+    const eventQuantity = 0;
+    if (!event.target.value.trim().length == 0) {
+      eventQuantity = event.target.value;
+    }
+
+    dispatch(
+      cartActions.setItemAmount({
+        id,
+        title,
+        price,
+        model,
+        quantity: eventQuantity,
+      })
+    );
+  };
+
+  const cartItems = useSelector((state) => state.cart.items).find(
+    (item) => item.id === id
+  );
+  const test = "";
+  if (cartItems) {
+    test = cartItems.quantity;
+  }
+
   return (
-    <li className={classes.item}>
-      <header>
-        <h3>
-          {id} {model}
-        </h3>
-        <div className={classes.price}>
-          ${total.toFixed(2)}{" "}
-          <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
-        </div>
-      </header>
-      <div className={classes.details}>
-        <div className={classes.quantity}>
-          x <span>{quantity}</span>
-        </div>
-        <div className={classes.actions}>
-          <button onClick={removeItemHandler}>-</button>
-          <button onClick={addItemHandler}>+</button>
-        </div>
-      </div>
-    </li>
+    <tr>
+      <th>
+        <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="30" height="30" />
+      </th>
+      <th>{id}</th>
+      <th>{model}</th>
+      <th>{model}</th>
+      <th>{price}</th>
+      <th>{price}</th>
+
+      <th>
+        <input
+          type="number"
+          min="0"
+          className={classes.input}
+          onChange={setCartHandler}
+          value={test}
+        />
+      </th>
+      <th>
+        <button onClick={removeItemHandler}>-</button>
+        <button onClick={addItemHandler}>+</button>
+      </th>
+    </tr>
   );
 };

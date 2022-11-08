@@ -29,10 +29,22 @@ a {
   height: 100vh;
 }
 
+table {
+  font-family: "Barlow";
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  font-size: small;
+  padding: 3px;
+}
 
-
-
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 
 @import "../styles/index.css";
 @import "../styles/App.css";

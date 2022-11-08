@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: rgb(230, 230, 230);
-
+  font-family: "Barlow";
   min-height: 100vh;
   display: flex;
   flex-direction: column;
