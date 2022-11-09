@@ -6,7 +6,6 @@ import { SelectMainOrder } from "./SelectMainOrder";
 export const HandleOrders = () => {
   const dispatch = useDispatch();
   const cartItems = Object.keys(useSelector((state) => state.cart));
-  console.log(cartItems);
 
   const addOrderHandler = () => {
     const orderName = "order3";

@@ -6,8 +6,9 @@ import { cartActions } from "../../../store/cart-slice";
 import { useSelector, shallowEqual } from "react-redux";
 
 export const ProductRegularView = (props) => {
+  
   const dispatch = useDispatch();
-
+  const SelectedMainOrder = useSelector((state) => state.mainOrder.mainOrder);
   const modelQuantityHandler = (event) => {
     const eventQuantity = "";
     if (!event.target.value.trim().length == 0) {
@@ -17,6 +18,7 @@ export const ProductRegularView = (props) => {
       cartActions.changeModelQuantity({
         model,
         quantity: eventQuantity,
+        order: SelectedMainOrder,
       })
     );
   };
@@ -31,6 +33,7 @@ export const ProductRegularView = (props) => {
         cartActions.changeModelQuantityCalc({
           model,
           quantity: eventQuantity,
+          order: SelectedMainOrder,
         })
       );
     }
@@ -39,7 +42,7 @@ export const ProductRegularView = (props) => {
   const model = props.items.Modelname;
 
   const totalModelQuantity = useSelector(
-    (state) => state.cart.order1.totalQuantityModel
+    (state) => state["cart"][SelectedMainOrder]["totalQuantityModel"]
   ).find((item) => item.model === model);
 
   const test2 = "";

@@ -3,10 +3,14 @@ import { OrderRow } from "./OrderRow";
 import classes from "./CurrentOrder.module.css";
 
 export const CurrentOrder = () => {
-  const cartItems = useSelector((state) => state.cart.order1.items);
+  const SelectedMainOrder = useSelector((state) => state.mainOrder.mainOrder);
+  const cartItems = useSelector(
+    (state) => state["cart"][SelectedMainOrder]["items"]
+  );
   const order = useSelector((state) => state.cart);
+  
+  console.log(cartItems);
 
-  console.log(order);
   return (
     <div className={classes.cart}>
       <table>

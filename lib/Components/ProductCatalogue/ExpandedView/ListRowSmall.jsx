@@ -5,7 +5,7 @@ import { useSelector, shallowEqual } from "react-redux";
 
 export const ListRowSmall = (props) => {
   const dispatch = useDispatch();
-
+  const SelectedMainOrder = useSelector((state) => state.mainOrder.mainOrder);
   const setCartHandler = (event) => {
     const eventQuantity = 0;
     if (!event.target.value.trim().length == 0) {
@@ -19,6 +19,7 @@ export const ListRowSmall = (props) => {
         price,
         model,
         quantity: eventQuantity,
+        order: SelectedMainOrder
       })
     );
   };
@@ -26,7 +27,7 @@ export const ListRowSmall = (props) => {
   const title = props.color;
   const price = 100;
   const model = props.model;
-  const cartItems = useSelector((state) => state.cart.order1.items).find(
+  const cartItems = useSelector((state) => state["cart"][SelectedMainOrder]["items"]).find(
     (item) => item.id === id
   );
   const test = "";

@@ -5,7 +5,7 @@ import { cartActions } from "../../store/cart-slice";
 
 export const OrderRow = (props) => {
   const dispatch = useDispatch();
-
+  const SelectedMainOrder = useSelector((state) => state.mainOrder.mainOrder);
   const { title, quantity, total, price, id, model } = props.item;
 
   const removeItemHandler = () => {
@@ -13,6 +13,7 @@ export const OrderRow = (props) => {
       cartActions.removeItemFromCart({
         id,
         model,
+        order: SelectedMainOrder,
       })
     );
   };
@@ -24,6 +25,7 @@ export const OrderRow = (props) => {
         title,
         price,
         model,
+        order: SelectedMainOrder,
       })
     );
   };
@@ -41,11 +43,12 @@ export const OrderRow = (props) => {
         price,
         model,
         quantity: eventQuantity,
+        order: SelectedMainOrder,
       })
     );
   };
 
-  const cartItems = useSelector((state) => state.cart.order1.items).find(
+  const cartItems = useSelector((state) => state["cart"][SelectedMainOrder]["items"]).find(
     (item) => item.id === id
   );
   const test = "";
