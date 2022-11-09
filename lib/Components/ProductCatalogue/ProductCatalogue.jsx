@@ -4,6 +4,7 @@ import { useState } from "react";
 import classes from "./ProductCatalogue.module.css";
 import TextField from "@mui/material/TextField";
 import ProductList from "./ProductList";
+import { SelectMainOrder } from "../CurrentOrder/SelectMainOrder";
 
 export const ProductCatalogue = (props) => {
   
@@ -24,8 +25,7 @@ export const ProductCatalogue = (props) => {
   return (
     <Fragment>
       <div className={classes["split-plane-right-heading"]}>
-        <div
-          className={classes.numberOfProductsInSelection}>
+        <div className={classes.numberOfProductsInSelection}>
           {numberOfItems} items
         </div>
         <div className={classes.search}>
@@ -39,6 +39,9 @@ export const ProductCatalogue = (props) => {
               setSearchTerm(event.target.value);
             }}
           />
+        </div>
+        <div className={classes.search}>
+          <SelectMainOrder />
         </div>
         <div>Net price</div>
         <div>Retail price</div>
