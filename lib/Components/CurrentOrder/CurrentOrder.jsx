@@ -35,9 +35,9 @@ export const CurrentOrder = () => {
               <th>{item}</th>
             ))}
           </tr>
-          {test2.map((item) => (
+          {test2.map((item, i) => (
             <OrderRow
-              key={item}
+              key={i}
               item={{
                 id: item,
                 orders: selectedOrders
