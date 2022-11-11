@@ -8,38 +8,36 @@ import { OrderRowInput } from "./OrderRowInput";
 export const OrderRow = (props) => {
   const dispatch = useDispatch();
   const SelectedMainOrder = useSelector((state) => state.mainOrder.mainOrder);
-  const { id } = props.item;
+  const { id, orders } = props.item;
 
-  const itemData = ProductData.filter(
-    (item) => item.ItemNumber == id
-  )[0];
+  const itemData = ProductData.filter((item) => item.ItemNumber == id)[0];
 
-  const shortDescription = itemData.Shortdescription
-  const model = itemData.Modelname
-  const netPrice = itemData.Netprice
-  const retailPrice = itemData.Recommendedretailprice
-  const color = itemData.Color
-  const size = itemData.Size 
+  const shortDescription = itemData.Shortdescription;
+  const model = itemData.Modelname;
+  const netPrice = itemData.Netprice;
+  const retailPrice = itemData.Recommendedretailprice;
+  const color = itemData.Color;
+  const size = itemData.Size;
 
-  const removeItemHandler = () => {
-    dispatch(
-      cartActions.removeItemFromCart({
-        id,
-        model,
-        order: SelectedMainOrder,
-      })
-    );
-  };
+  // const removeItemHandler = () => {
+  //   dispatch(
+  //     cartActions.removeItemFromCart({
+  //       id,
+  //       model,
+  //       order: SelectedMainOrder,
+  //     })
+  //   );
+  // };
 
-  const addItemHandler = () => {
-    dispatch(
-      cartActions.addItemToCart({
-        id,
-        model,
-        order: SelectedMainOrder,
-      })
-    );
-  };
+  // const addItemHandler = () => {
+  //   dispatch(
+  //     cartActions.addItemToCart({
+  //       id,
+  //       model,
+  //       order: SelectedMainOrder,
+  //     })
+  //   );
+  // };
 
   const setCartHandler = (event) => {
     const eventQuantity = 0;
@@ -57,9 +55,9 @@ export const OrderRow = (props) => {
     );
   };
 
-  const cartItems = useSelector((state) => state["cart"][SelectedMainOrder]["items"]).find(
-    (item) => item.id === id
-  );
+  const cartItems = useSelector(
+    (state) => state["cart"][SelectedMainOrder]["items"]
+  ).find((item) => item.id === id);
   const test = "";
   if (cartItems) {
     test = cartItems.quantity;
@@ -77,18 +75,22 @@ export const OrderRow = (props) => {
       <th>{netPrice}</th>
       <th>{retailPrice}</th>
 
-      <th>
+      {/* <th>
         <input
           type="number"
           className={classes.input}
           onChange={setCartHandler}
           value={test}
         />
-      </th>
-      <th>
+      </th> */}
+      {orders.map((item, i) => (
+        <OrderRowInput key={i} order={item} id={id} model={model}/>
+      ))}
+
+      {/* <th>
         <button onClick={removeItemHandler}>-</button>
         <button onClick={addItemHandler}>+</button>
-      </th>
+      </th> */}
     </tr>
   );
 };
