@@ -31,8 +31,8 @@ export const CurrentOrder = () => {
             <th>Size</th>
             <th>Net</th>
             <th>Retail</th>
-            {selectedOrders.map((item) => (
-              <th>{item}</th>
+            {selectedOrders.map((item, i) => (
+              <th key={i}>{item}</th>
             ))}
           </tr>
           {test2.map((item, i) => (
