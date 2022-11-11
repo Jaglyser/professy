@@ -1,25 +1,25 @@
 import classes from "./SelectOrders.module.css";
 import { useDispatch } from "react-redux";
-import { selectedOrderActions } from "../../store/selectedOrders";
+import { selectedOrdersActions } from "../../store/selectedOrders";
 import { useSelector } from "react-redux";
 
 export const SelectOrder = (props) => {
   const dispatch = useDispatch();
   const value = props.value;
   const selectedOrder = useSelector(
-    (state) => state.selectedOrder.selectedOrders
+    (state) => state.selectedOrders.selectedOrders
   );
   const category = props.category;
   const selectOrder = (event) => {
     dispatch(
-      selectedOrderActions.addFilter({
+      selectedOrdersActions.addFilter({
         value,
       })
     );
   };
   const removeOrder = (event) => {
     dispatch(
-      selectedOrderActions.removeFilter({
+      selectedOrdersActions.removeFilter({
         value,
       })
     );

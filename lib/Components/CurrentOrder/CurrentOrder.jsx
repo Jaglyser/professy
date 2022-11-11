@@ -7,9 +7,27 @@ export const CurrentOrder = () => {
   const cartItems = useSelector(
     (state) => state["cart"][SelectedMainOrder]["items"]
   );
-  const order = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);
+
   
-  console.log(cartItems);
+
+  const selectedOrdersData = useSelector(
+    (state) => state.selectedOrders.selectedOrders
+  );
+
+  const selectedOrders = selectedOrdersData.map((item) => item.orders);
+
+  const cart2 = Object.entries(cart).filter(
+    (item) => selectedOrders.includes(item[0])
+  );
+
+  const test = new Set(Object.values(cart).map((objects) =>
+    objects.items.map((item) => item.id)
+  ).flat(1))
+
+
+  const test2 = Array.from(new Set(cart2.map(item => item[1].items.map((item)=> item.id)).flat(1)))
+
 
   return (
     <div className={classes.cart}>
@@ -19,21 +37,18 @@ export const CurrentOrder = () => {
             <th></th>
             <th>Item number</th>
             <th>Name</th>
-            <th>Model</th>
+            <th>Color</th>
+            <th>Size</th>
             <th>Net</th>
             <th>Retail</th>
             <th>Quantity</th>
           </tr>
-          {cartItems.map((item) => (
+          {test2.map((item) => (
             <OrderRow
-              key={item.id}
+              key={item}
               item={{
-                id: item.id,
-                title: item.name,
-                quantity: item.quantity,
-                total: item.totalPrice,
-                price: item.price,
-                model: item.model,
+                id: item,
+                orders: selectedOrders
               }}
             />
           ))}

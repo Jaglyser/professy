@@ -2,11 +2,24 @@ import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import classes from "./OrderRow.module.css";
 import { cartActions } from "../../store/cart-slice";
+import ProductData from "../../data/ProductData";
+import { OrderRowInput } from "./OrderRowInput";
 
 export const OrderRow = (props) => {
   const dispatch = useDispatch();
   const SelectedMainOrder = useSelector((state) => state.mainOrder.mainOrder);
-  const { title, quantity, total, price, id, model } = props.item;
+  const { id } = props.item;
+
+  const itemData = ProductData.filter(
+    (item) => item.ItemNumber == id
+  )[0];
+
+  const shortDescription = itemData.Shortdescription
+  const model = itemData.Modelname
+  const netPrice = itemData.Netprice
+  const retailPrice = itemData.Recommendedretailprice
+  const color = itemData.Color
+  const size = itemData.Size 
 
   const removeItemHandler = () => {
     dispatch(
@@ -22,8 +35,6 @@ export const OrderRow = (props) => {
     dispatch(
       cartActions.addItemToCart({
         id,
-        title,
-        price,
         model,
         order: SelectedMainOrder,
       })
@@ -39,8 +50,6 @@ export const OrderRow = (props) => {
     dispatch(
       cartActions.setItemAmount({
         id,
-        title,
-        price,
         model,
         quantity: eventQuantity,
         order: SelectedMainOrder,
@@ -62,15 +71,15 @@ export const OrderRow = (props) => {
         <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="30" height="30" />
       </th>
       <th>{id}</th>
-      <th>{model}</th>
-      <th>{model}</th>
-      <th>{price}</th>
-      <th>{price}</th>
+      <th>{shortDescription}</th>
+      <th>{color}</th>
+      <th>{size}</th>
+      <th>{netPrice}</th>
+      <th>{retailPrice}</th>
 
       <th>
         <input
           type="number"
-          min="0"
           className={classes.input}
           onChange={setCartHandler}
           value={test}

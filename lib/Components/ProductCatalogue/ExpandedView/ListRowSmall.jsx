@@ -15,8 +15,6 @@ export const ListRowSmall = (props) => {
     dispatch(
       cartActions.setItemAmount({
         id,
-        title,
-        price,
         model,
         quantity: eventQuantity,
         order: SelectedMainOrder
