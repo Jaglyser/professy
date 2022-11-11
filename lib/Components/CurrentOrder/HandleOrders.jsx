@@ -18,7 +18,6 @@ export const HandleOrders = () => {
 
   return (
     <div>
-      <SelectMainOrder />
       <button onClick={addOrderHandler}>test</button>
       {cartItems.map((item, i) => (
         <SelectOrder key={i} value={item} />

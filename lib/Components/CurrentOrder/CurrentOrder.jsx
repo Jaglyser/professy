@@ -16,7 +16,7 @@ export const CurrentOrder = () => {
   );
 
 
-  const test2 = Array.from(new Set(cart2.map(item => item[1].items.map((item)=> item.id)).flat(1)))
+  const test2 = Array.from(new Set(cart2.map(item => item[1].items.map((item)=> item.id)).flat(1))).sort()
 
 
   return (
