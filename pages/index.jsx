@@ -93,7 +93,7 @@ export const getServerSideProps = withIronSessionSsr(async function ({ req, res 
   //     props: {}
   //   }
   // }
-  if (user) {
+  if (!user) {
     return {
       redirect: {
         destination: '/login',
