@@ -5,10 +5,6 @@ import classes from "./CurrentOrder.module.css";
 export const CurrentOrder = () => {
   const cart = useSelector((state) => state.cart);
 
-  const selectedOrdersData = useSelector(
-    (state) => state.selectedOrders.selectedOrders
-  );
-
   const cart3 = Object.entries(cart).filter((item) => item[1].selected == true)
 
   const test2 = Array.from(new Set(cart3.map(item => item[1].items.map((item)=> item.id)).flat(1))).sort()

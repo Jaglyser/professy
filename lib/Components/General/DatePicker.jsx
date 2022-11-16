@@ -5,9 +5,28 @@ import Stack from "@mui/material/Stack";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { useDispatch, useSelector } from "react-redux";
+import { cartActions } from "../../store/cart-slice";
 
 export const DatePicker = (props) => {
-  const [value, setValue] = React.useState(dayjs("2022-04-07"));
+
+  const order = props.order;
+
+  const dispatch = useDispatch();
+
+  const deliveryDate = useSelector(
+    (state) => state["cart"][order]["deliveryDate"]
+  );
+
+    const selectDeliveryDate = (newValue) => {
+      dispatch(
+        cartActions.selectDeliveryDate({
+          order,
+          deliveryDate: newValue,
+        })
+      );
+    };
+
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -15,10 +34,10 @@ export const DatePicker = (props) => {
         <DesktopDatePicker
           label="For desktop"
           size="small"
-          value={value}
-          minDate={dayjs("2017-01-01")}
+          value={dayjs(deliveryDate)}
+          minDate={dayjs("2022-04-07")}
           onChange={(newValue) => {
-            setValue(newValue);
+            selectDeliveryDate(newValue);
           }}
           renderInput={(params) => <TextField {...params} />}
         />
