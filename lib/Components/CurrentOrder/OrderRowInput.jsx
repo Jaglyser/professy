@@ -40,6 +40,7 @@ export const OrderRowInput = (props) => {
         className={classes.input}
         onChange={setCartHandler}
         value={test}
+        min="0"
       />
     </th>
   );

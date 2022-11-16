@@ -2,6 +2,11 @@ import classes from "./SelectOrders.module.css";
 import { useDispatch } from "react-redux";
 import { selectedOrdersActions } from "../../store/selectedOrders";
 import { useSelector } from "react-redux";
+import { Prevent } from "../Functions/Prevent";
+import { DatePicker } from "../General/DatePicker";
+import { Fragment } from "react";
+import ControlledCheckbox from "../General/ControlledCheckbox";
+
 
 export const SelectOrder = (props) => {
   const dispatch = useDispatch();
@@ -34,17 +39,40 @@ export const SelectOrder = (props) => {
   });
 
   return (
-    <div>
+    <Fragment>
       {!isFound && (
-        <div className={classes.button} onClick={selectOrder}>
-          {props.value}
-        </div>
+        <tr className={classes.tr}>
+          <th>
+            <h2>123123</h2>
+          </th>
+          <th>
+            <h2>{props.value}</h2>
+          </th>
+          <th
+            className={classes.th}
+            onClick={Prevent(() => console.log("Child Element!"))}>
+            <DatePicker />
+          </th>
+          <th className={classes.check}>
+            <ControlledCheckbox order={props.value}/>
+          </th>
+        </tr>
       )}
       {isFound && (
-        <div className={classes["selected-button"]} onClick={removeOrder}>
-          {props.value}
-        </div>
+        <tr className={classes["tr-selected"]} onClick={removeOrder}>
+          <th>
+            <h2>123123</h2>
+          </th>
+          <th>
+            <h2>{props.value}</h2>
+          </th>
+          <th
+            className={classes.th}
+            onClick={Prevent(() => console.log("Child Element!"))}>
+            <DatePicker />
+          </th>
+        </tr>
       )}
-    </div>
+    </Fragment>
   );
 };

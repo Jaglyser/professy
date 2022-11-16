@@ -74,23 +74,9 @@ export const OrderRow = (props) => {
       <th>{size}</th>
       <th>{netPrice}</th>
       <th>{retailPrice}</th>
-
-      {/* <th>
-        <input
-          type="number"
-          className={classes.input}
-          onChange={setCartHandler}
-          value={test}
-        />
-      </th> */}
       {orders.map((item, i) => (
         <OrderRowInput key={i} order={item} id={id} model={model}/>
       ))}
-
-      {/* <th>
-        <button onClick={removeItemHandler}>-</button>
-        <button onClick={addItemHandler}>+</button>
-      </th> */}
     </tr>
   );
 };

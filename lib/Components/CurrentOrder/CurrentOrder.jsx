@@ -9,15 +9,11 @@ export const CurrentOrder = () => {
     (state) => state.selectedOrders.selectedOrders
   );
 
-  const selectedOrders = selectedOrdersData.map((item) => item.orders);
+  const cart3 = Object.entries(cart).filter((item) => item[1].selected == true)
 
-  const cart2 = Object.entries(cart).filter(
-    (item) => selectedOrders.includes(item[0])
-  );
+  const test2 = Array.from(new Set(cart3.map(item => item[1].items.map((item)=> item.id)).flat(1))).sort()
 
-
-  const test2 = Array.from(new Set(cart2.map(item => item[1].items.map((item)=> item.id)).flat(1))).sort()
-
+  const selectedOrders = cart3.map((item) => item[0]);
 
   return (
     <div className={classes.cart}>
