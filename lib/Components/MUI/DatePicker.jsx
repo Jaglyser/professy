@@ -22,7 +22,7 @@ export const DatePicker = (props) => {
       dispatch(
         cartActions.selectDeliveryDate({
           order,
-          deliveryDate: newValue,
+          deliveryDate: newValue.toString(),
         })
       );
     };

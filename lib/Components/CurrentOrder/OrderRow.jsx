@@ -4,6 +4,7 @@ import classes from "./OrderRow.module.css";
 import { cartActions } from "../../store/cart-slice";
 import ProductData from "../../data/ProductData";
 import { OrderRowInput } from "./OrderRowInput";
+import { Fragment } from "react";
 
 export const OrderRow = (props) => {
   const dispatch = useDispatch();
@@ -69,13 +70,18 @@ export const OrderRow = (props) => {
         <Image src="/Images/4FORTY_AIR_MIPS.jpeg" width="30" height="30" />
       </th>
       <th>{id}</th>
-      <th>{shortDescription}</th>
+      {orders.length < 8 && <th>{shortDescription}</th>}
+      {orders.length >= 8 && <th>{model}</th>}
       <th>{color}</th>
       <th>{size}</th>
-      <th>{netPrice}</th>
-      <th>{retailPrice}</th>
+      {orders.length < 6 && (
+        <Fragment>
+          <th>{netPrice}</th>
+          <th>{retailPrice}</th>
+        </Fragment>
+      )}
       {orders.map((item, i) => (
-        <OrderRowInput key={i} order={item} id={id} model={model}/>
+        <OrderRowInput key={i} order={item} id={id} model={model} />
       ))}
     </tr>
   );
